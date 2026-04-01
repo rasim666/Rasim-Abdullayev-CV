@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasim Abdullayev — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97E;
+  --gold-dim: rgba(201,168,76,0.15);
+  --dark: #0C0C0C;
+  --dark2: #121212;
+  --dark3: #1A1A1A;
+  --dark4: #222222;
+  --border: rgba(255,255,255,0.07);
+  --text: #D4D4D4;
+  --text-muted: #666;
+  --text-dim: #999;
+  --white: #F5F5F0;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Outfit', sans-serif;
+  --nav-h: 70px;
+}
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ===================== NOISE OVERLAY ===================== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ===================== LANGUAGE SWITCHER ===================== */
+.lang-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(12,12,12,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+.logo-nav {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.lang-btns {
+  display: flex;
+  gap: 4px;
+  background: var(--dark3);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.lang-btn.active {
+  background: var(--gold);
+  color: #000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--nav-h) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 0 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-text { }
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--white);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.hero-name strong {
+  display: block;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.hero-title {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 30px 0;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s forwards;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-dim);
+  max-width: 460px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.0s forwards;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* HERO RIGHT SIDE - Stats card */
+.hero-card {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.9s forwards;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 30px; right: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.card-stat {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-stat:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.contact-row svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-row a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-row a:hover { color: var(--gold); }
+
+/* ===================== SECTIONS ===================== */
+section {
+  padding: 100px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.section-title strong { font-weight: 700; }
+
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 24px 0 48px;
+}
+
+/* ===================== EXPERIENCE ===================== */
+#experience { position: relative; }
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+}
+
+.exp-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 28px 32px;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.exp-item:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateX(4px);
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--dark);
+  box-shadow: 0 0 12px rgba(201,168,76,0.5);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+
+.exp-date {
+  font-size: 12px;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.exp-role {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.exp-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ===================== SKILLS ===================== */
+#skills { background: var(--dark2); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.skill-card {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: border-color 0.3s;
+}
+
+.skill-card:hover { border-color: rgba(201,168,76,0.25); }
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gold-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.skill-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.skill-bar-bg {
+  height: 3px;
+  background: var(--dark4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(.16,1,.3,1);
+  width: 0%;
+}
+
+.skill-pct {
+  font-size: 12px;
+  color: var(--gold);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.soft-skills {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-pill {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.skill-pill:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ===================== EDUCATION ===================== */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.edu-card {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.edu-card:hover { border-color: rgba(201,168,76,0.3); }
+
+.edu-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.edu-year {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold-dim);
+  line-height: 1;
+  margin-bottom: 16px;
+  color: rgba(201,168,76,0.15);
+}
+
+.edu-school {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.edu-degree {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.edu-period {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ===================== LANGUAGES ===================== */
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.lang-card {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.lang-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-4px);
+}
+
+.lang-flag { font-size: 36px; margin-bottom: 12px; }
+
+.lang-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.lang-level {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===================== CONTACT ===================== */
+#contact { background: var(--dark2); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-info { }
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gold-dim);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.contact-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.contact-val {
+  font-size: 15px;
+  color: var(--white);
+}
+
+.contact-val a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-val a:hover { color: var(--gold); }
+
+.contact-cta {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.cta-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  section { padding: 70px 30px; }
+  .hero-inner { grid-template-columns: 1fr; padding: 0 30px; gap: 40px; }
+  .hero-card { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 30px; }
+  .lang-bar { padding: 0 20px; }
+  .nav-links { display: none; }
+}
+
+/* ===================== SECTION WRAPPERS (full-width bg) ===================== */
+.section-wrapper {
+  background: var(--dark2);
+}
+
+.section-wrapper section {
+  background: transparent;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== LANGUAGE BAR ===== -->
+<nav class="lang-bar">
+  <div class="logo-nav">RA</div>
+  <ul class="nav-links">
+    <li><a href="#experience" data-i18n="nav_exp">Təcrübə</a></li>
+    <li><a href="#skills" data-i18n="nav_skills">Bacarıqlar</a></li>
+    <li><a href="#education" data-i18n="nav_edu">Təhsil</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Əlaqə</a></li>
+  </ul>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('az')">AZ</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Event Manager · Project Coordinator</p>
+      <h1 class="hero-name">
+        Rasim<br>
+        <strong>Abdullayev</strong>
+      </h1>
+      <p class="hero-title" data-i18n="hero_title">Event Project Manager | Baku, Azerbaijan</p>
+      <div class="hero-line"></div>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarəedilməsini həyata keçirən təcrübəli mütəxəssis. 8+ illik müxtəlif sektorda iş təcrübəsi.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary" data-i18n="hero_cta1">Əlaqə yarat</a>
+        <a href="#experience" class="btn-outline" data-i18n="hero_cta2">Təcrübəyə bax</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-stat">
+        <div class="stat-number">8+</div>
+        <div class="stat-label" data-i18n="stat1">İl İş Təcrübəsi</div>
+      </div>
+      <div class="card-stat">
+        <div class="stat-number">10+</div>
+        <div class="stat-label" data-i18n="stat2">Tamamlanmış Layihə</div>
+      </div>
+      <div class="card-stat" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
+        <div style="margin-bottom:20px; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted)" data-i18n="contact_label">Əlaqə</div>
+        <div class="contact-row">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          <a href="tel:+994556760115">+994 55 676 01 15</a>
+        </div>
+        <div class="contact-row">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          <a href="mailto:rasimabdullayev6@gmail.com">rasimabdullayev6@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          <span>Bakı, Azərbaycan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <p class="section-label" data-i18n="sec_exp_label">İş Təcrübəsi</p>
+  <h2 class="section-title"><strong data-i18n="sec_exp_title">Karyera</strong> <span data-i18n="sec_exp_title2">Yolu</span></h2>
+  <div class="section-divider"></div>
+  <div class="timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">İ TİCKET – CİS Games 2025</div>
+          <div class="exp-role" data-i18n="exp1_role">Venue Ticketing Coordinator</div>
+        </div>
+        <div class="exp-date">09.2025 – 10.2025</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp1_desc">CİS Oyunları 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş nəzarəti sistemlərinin idarə edilməsi və komanda rəhbərliyi.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">LEDAZ – Innovation Event LLC</div>
+          <div class="exp-role" data-i18n="exp2_role">Event Project Manager</div>
+        </div>
+        <div class="exp-date">09.2024 – 07.2025</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp2_desc">Müxtəlif miqyaslı tədbirlərin konsepsiyadan icraya qədər tam idarə edilməsi. Büdcə planlaması, vendor münasibətləri, komanda koordinasiyası.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Veyseloglu Group – Araz LLC</div>
+          <div class="exp-role" data-i18n="exp3_role">Production Accounting Specialist</div>
+        </div>
+        <div class="exp-date">09.2023 – 08.2024</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp3_desc">İstehsalat proseslərinin maliyyə uçotunun aparılması, hesabatların hazırlanması və daxili audit dəstəyi.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Veyseloglu Group – Khoncha LLC</div>
+          <div class="exp-role" data-i18n="exp4_role">Accounting Specialist</div>
+        </div>
+        <div class="exp-date">03.2023 – 09.2023</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp4_desc">Mühasibat uçotunun aparılması, maliyyə hesabatlarının hazırlanması, vergi bəyannamələrinin işlənməsi.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Veyseloglu Group – Khoncha LLC</div>
+          <div class="exp-role" data-i18n="exp5_role">Junior Accounting Specialist</div>
+        </div>
+        <div class="exp-date">10.2020 – 06.2021</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp5_desc">Mühasibat qrupuna dəstək, sənəd dövriyyəsi, ödəmə əmrləri və hesab-faktura idarəetməsi.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Azur Resort & Spa (Antalya)</div>
+          <div class="exp-role" data-i18n="exp6_role">DJ</div>
+        </div>
+        <div class="exp-date">05.2019 – 03.2020</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp6_desc">5 ulduzlu beynəlxalq oteldə əyləncə proqramlarının aparılması, canlı performans və tədbirlərin koordinasiyası.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Throne Beach Resort & Spa (Antalya)</div>
+          <div class="exp-role" data-i18n="exp7_role">Land Sport / DJ Assistant</div>
+        </div>
+        <div class="exp-date">04.2018 – 11.2018</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp7_desc">Qonaq animasiya proqramlarında iştirak, idman tədbirlərinin koordinasiyası, DJ köməkçisi vəzifəsinin icra edilməsi.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">İ TİCKET – BCC 2019</div>
+          <div class="exp-role" data-i18n="exp8_role">Ticket Control</div>
+        </div>
+        <div class="exp-date">2019</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp8_desc">Bilet nəzarəti və giriş idarəetməsi sisteminin operativ icrası.</div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">4th Islamic Solidarity Games</div>
+          <div class="exp-role" data-i18n="exp9_role">Supervisor – Spectator Service</div>
+        </div>
+        <div class="exp-date">04.2017 – 07.2017</div>
+      </div>
+      <div class="exp-desc" data-i18n="exp9_desc">Beynəlxalq Olimpiad çərçivəsində tamaşaçı xidmətləri qrupuna rəhbərlik, prosedurların koordinasiyası.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<div class="section-wrapper">
+<section id="skills">
+  <p class="section-label" data-i18n="sec_skills_label">Bacarıqlar</p>
+  <h2 class="section-title"><strong data-i18n="sec_skills_title">Peşəkar</strong> <span data-i18n="sec_skills_title2">Bacarıqlar</span></h2>
+  <div class="section-divider"></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">📋</div>
+      <div class="skill-name" data-i18n="sk1">Layihə İdarəetməsi</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="95"></div></div>
+      <div class="skill-pct">95%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🎯</div>
+      <div class="skill-name" data-i18n="sk2">Tədbir Koordinasiyası</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="92"></div></div>
+      <div class="skill-pct">92%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-name" data-i18n="sk3">Machine Learning</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="93"></div></div>
+      <div class="skill-pct">93%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name" data-i18n="sk4">Data Visualization</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="79"></div></div>
+      <div class="skill-pct">79%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">💰</div>
+      <div class="skill-name" data-i18n="sk5">Mühasibat & Maliyyə</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="82"></div></div>
+      <div class="skill-pct">82%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">MS Office Suite</div>
+      <div class="skill-bar-bg"><div class="skill-bar" data-pct="88"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+  </div>
+
+  <div class="soft-skills reveal">
+    <span class="skill-pill" data-i18n="soft1">Liderlik</span>
+    <span class="skill-pill" data-i18n="soft2">Yaradıcılıq</span>
+    <span class="skill-pill" data-i18n="soft3">Analitik Düşüncə</span>
+    <span class="skill-pill" data-i18n="soft4">Komanda İşi</span>
+    <span class="skill-pill" data-i18n="soft5">Stressə Davamlılıq</span>
+    <span class="skill-pill" data-i18n="soft6">Ünsiyyət</span>
+    <span class="skill-pill" data-i18n="soft7">Çoxtapşırıqlılıq</span>
+  </div>
+</section>
+</div>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <p class="section-label" data-i18n="sec_edu_label">Təhsil</p>
+  <h2 class="section-title"><strong data-i18n="sec_edu_title">Akademik</strong> <span data-i18n="sec_edu_title2">Keçmiş</span></h2>
+  <div class="section-divider"></div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-year">BBU</div>
+      <div class="edu-school" data-i18n="edu1_school">Bakı Biznes Universiteti</div>
+      <div class="edu-degree" data-i18n="edu1_deg">Bakalavr – İnformasiya Texnologiyaları</div>
+      <div class="edu-period">2020 — <span data-i18n="now">İndi</span></div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">BMT</div>
+      <div class="edu-school" data-i18n="edu2_school">Bakı İdarəetmə və Texnologiya Kolleci</div>
+      <div class="edu-degree" data-i18n="edu2_deg">Sub-Bakalavr – İnformasiya Texnologiyaları</div>
+      <div class="edu-period">2013 — 2017</div>
+    </div>
+  </div>
+
+  <!-- Languages -->
+  <div style="margin-top:60px">
+    <p class="section-label" data-i18n="lang_label">Dil Bilikləri</p>
+    <div class="lang-grid" style="margin-top:24px">
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇦🇿</div>
+        <div class="lang-name" data-i18n="lang_az">Azərbaycan dili</div>
+        <div class="lang-level" data-i18n="native">Ana dili</div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-name" data-i18n="lang_en">İngilis dili</div>
+        <div class="lang-level">B1</div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇷🇺</div>
+        <div class="lang-name" data-i18n="lang_ru">Rus dili</div>
+        <div class="lang-level">B1</div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🪖</div>
+        <div class="lang-name" data-i18n="military_title">Hərbi xidmət</div>
+        <div class="lang-level" data-i18n="military_val">2021–2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<div class="section-wrapper">
+<section id="contact">
+  <p class="section-label" data-i18n="sec_contact_label">Əlaqə</p>
+  <h2 class="section-title"><strong data-i18n="sec_contact_title">Əlaqəyə</strong> <span data-i18n="sec_contact_title2">Keç</span></h2>
+  <div class="section-divider"></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item reveal">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label" data-i18n="c_phone">Telefon</div>
+          <div class="contact-val"><a href="tel:+994556760115">+994 55 676 01 15</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val"><a href="mailto:rasimabdullayev6@gmail.com">rasimabdullayev6@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">💼</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val"><a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">linkedin.com/in/rasimabdullayev1997</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label" data-i18n="c_loc">Məkan</div>
+          <div class="contact-val">Bakı, Azərbaycan</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta reveal">
+      <div class="cta-title" data-i18n="cta_title">Birlikdə işləyək</div>
+      <div class="cta-desc" data-i18n="cta_desc">Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.</div>
+      <a href="mailto:rasimabdullayev6@gmail.com" class="btn-primary" data-i18n="cta_btn">Məktub göndər</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <span>© 2025 Rasim Abdullayev</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">LinkedIn</a>
+    <a href="mailto:rasimabdullayev6@gmail.com">Email</a>
+  </div>
+</footer>
+
+<!-- ===== i18n DATA ===== -->
+<script>
+const i18n = {
+  az: {
+    nav_exp: "Təcrübə", nav_skills: "Bacarıqlar", nav_edu: "Təhsil", nav_contact: "Əlaqə",
+    hero_eyebrow: "Event Manager · Layihə Koordinatoru",
+    hero_title: "Event Layihə Meneceri | Bakı, Azərbaycan",
+    hero_desc: "Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarəedilməsini həyata keçirən təcrübəli mütəxəssis. 8+ illik müxtəlif sektorda iş təcrübəsi.",
+    hero_cta1: "Əlaqə yarat", hero_cta2: "Təcrübəyə bax",
+    stat1: "İl İş Təcrübəsi", stat2: "Tamamlanmış Layihə", contact_label: "Əlaqə",
+    sec_exp_label: "İş Təcrübəsi", sec_exp_title: "Karyera", sec_exp_title2: "Yolu",
+    exp1_role: "Venue Ticketing Coordinator", exp1_desc: "CİS Oyunları 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş nəzarəti sistemlərinin idarə edilməsi və komanda rəhbərliyi.",
+    exp2_role: "Event Project Manager", exp2_desc: "Müxtəlif miqyaslı tədbirlərin konsepsiyadan icraya qədər tam idarə edilməsi. Büdcə planlaması, vendor münasibətləri, komanda koordinasiyası.",
+    exp3_role: "Production Accounting Specialist", exp3_desc: "İstehsalat proseslərinin maliyyə uçotunun aparılması, hesabatların hazırlanması və daxili audit dəstəyi.",
+    exp4_role: "Accounting Specialist", exp4_desc: "Mühasibat uçotunun aparılması, maliyyə hesabatlarının hazırlanması, vergi bəyannamələrinin işlənməsi.",
+    exp5_role: "Junior Accounting Specialist", exp5_desc: "Mühasibat qrupuna dəstək, sənəd dövriyyəsi, ödəmə əmrləri və hesab-faktura idarəetməsi.",
+    exp6_role: "DJ", exp6_desc: "5 ulduzlu beynəlxalq oteldə əyləncə proqramlarının aparılması, canlı performans və tədbirlərin koordinasiyası.",
+    exp7_role: "Land Sport / DJ Assistant", exp7_desc: "Qonaq animasiya proqramlarında iştirak, idman tədbirlərinin koordinasiyası, DJ köməkçisi vəzifəsinin icra edilməsi.",
+    exp8_role: "Ticket Control", exp8_desc: "Bilet nəzarəti və giriş idarəetməsi sisteminin operativ icrası.",
+    exp9_role: "Supervisor – Spectator Service", exp9_desc: "Beynəlxalq Olimpiad çərçivəsində tamaşaçı xidmətləri qrupuna rəhbərlik, prosedurların koordinasiyası.",
+    sec_skills_label: "Bacarıqlar", sec_skills_title: "Peşəkar", sec_skills_title2: "Bacarıqlar",
+    sk1: "Layihə İdarəetməsi", sk2: "Tədbir Koordinasiyası", sk3: "Maşın Öyrənməsi", sk4: "Məlumat Vizuallaşdırması", sk5: "Mühasibat & Maliyyə",
+    soft1: "Liderlik", soft2: "Yaradıcılıq", soft3: "Analitik Düşüncə", soft4: "Komanda İşi", soft5: "Stressə Davamlılıq", soft6: "Ünsiyyət", soft7: "Çoxtapşırıqlılıq",
+    sec_edu_label: "Təhsil", sec_edu_title: "Akademik", sec_edu_title2: "Keçmiş",
+    edu1_school: "Bakı Biznes Universiteti", edu1_deg: "Bakalavr – İnformasiya Texnologiyaları",
+    edu2_school: "Bakı İdarəetmə və Texnologiya Kolleci", edu2_deg: "Sub-Bakalavr – İnformasiya Texnologiyaları",
+    now: "İndi",
+    lang_label: "Dil Bilikləri", lang_az: "Azərbaycan dili", lang_en: "İngilis dili", lang_ru: "Rus dili", native: "Ana dili",
+    military_title: "Hərbi xidmət", military_val: "Tamamlanıb (2021–2023)",
+    sec_contact_label: "Əlaqə", sec_contact_title: "Əlaqəyə", sec_contact_title2: "Keç",
+    c_phone: "Telefon", c_loc: "Məkan",
+    cta_title: "Birlikdə işləyək", cta_desc: "Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.", cta_btn: "Məktub göndər"
+  },
+  en: {
+    nav_exp: "Experience", nav_skills: "Skills", nav_edu: "Education", nav_contact: "Contact",
+    hero_eyebrow: "Event Manager · Project Coordinator",
+    hero_title: "Event Project Manager | Baku, Azerbaijan",
+    hero_desc: "Experienced professional managing large-scale events from concept to completion. 8+ years of cross-sector work experience spanning hospitality, accounting, and event coordination.",
+    hero_cta1: "Get in touch", hero_cta2: "View experience",
+    stat1: "Years of Experience", stat2: "Projects Completed", contact_label: "Contact",
+    sec_exp_label: "Work Experience", sec_exp_title: "Career", sec_exp_title2: "Journey",
+    exp1_role: "Venue Ticketing Coordinator", exp1_desc: "Coordinated all ticketing operations for the CIS Games 2025, managed access control systems, and led on-site team operations.",
+    exp2_role: "Event Project Manager", exp2_desc: "End-to-end management of events across various scales. Budget planning, vendor relations, logistics and team coordination.",
+    exp3_role: "Production Accounting Specialist", exp3_desc: "Financial accounting for production processes, preparation of reports and internal audit support.",
+    exp4_role: "Accounting Specialist", exp4_desc: "Bookkeeping, financial statement preparation, tax declaration processing.",
+    exp5_role: "Junior Accounting Specialist", exp5_desc: "Support for accounting team, document workflow, payment orders and invoice management.",
+    exp6_role: "DJ", exp6_desc: "Entertainment programming at a 5-star international resort, live performances and event coordination.",
+    exp7_role: "Land Sport / DJ Assistant", exp7_desc: "Guest animation programs, sports event coordination, and DJ assistant duties.",
+    exp8_role: "Ticket Control", exp8_desc: "Ticketing control and access management system operations.",
+    exp9_role: "Supervisor – Spectator Service", exp9_desc: "Leading spectator services team at the 4th Islamic Solidarity Games, coordinating procedures and guest flow.",
+    sec_skills_label: "Skills", sec_skills_title: "Professional", sec_skills_title2: "Skills",
+    sk1: "Project Management", sk2: "Event Coordination", sk3: "Machine Learning", sk4: "Data Visualization", sk5: "Accounting & Finance",
+    soft1: "Leadership", soft2: "Creativity", soft3: "Analytical Thinking", soft4: "Teamwork", soft5: "Stress Resilience", soft6: "Communication", soft7: "Multitasking",
+    sec_edu_label: "Education", sec_edu_title: "Academic", sec_edu_title2: "Background",
+    edu1_school: "Baku Business University", edu1_deg: "Bachelor of Information Technology",
+    edu2_school: "Baku Management and Technology College", edu2_deg: "Sub-Bachelor of Information Technology",
+    now: "Present",
+    lang_label: "Languages", lang_az: "Azerbaijani", lang_en: "English", lang_ru: "Russian", native: "Native",
+    military_title: "Military Service", military_val: "Completed (2021–2023)",
+    sec_contact_label: "Contact", sec_contact_title: "Let's", sec_contact_title2: "Connect",
+    c_phone: "Phone", c_loc: "Location",
+    cta_title: "Let's work together", cta_desc: "Available for new projects. Open to collaboration in large-scale events, event coordination, and project management.", cta_btn: "Send a message"
+  },
+  ru: {
+    nav_exp: "Опыт", nav_skills: "Навыки", nav_edu: "Образование", nav_contact: "Контакт",
+    hero_eyebrow: "Event-менеджер · Координатор проектов",
+    hero_title: "Event Project Manager | Баку, Азербайджан",
+    hero_desc: "Опытный специалист в организации и управлении масштабными мероприятиями. Более 8 лет работы в различных секторах: гостеприимство, бухгалтерия и event-координация.",
+    hero_cta1: "Связаться", hero_cta2: "Просмотреть опыт",
+    stat1: "Лет Опыта", stat2: "Завершённых Проектов", contact_label: "Контакты",
+    sec_exp_label: "Опыт работы", sec_exp_title: "Карьерный", sec_exp_title2: "Путь",
+    exp1_role: "Координатор билетной службы", exp1_desc: "Координация всех операций с билетами на Играх СНГ 2025, управление системами контроля доступа и руководство командой на месте.",
+    exp2_role: "Event Project Manager", exp2_desc: "Полное управление мероприятиями различного масштаба — от концепции до реализации. Бюджетное планирование, работа с подрядчиками, координация команды.",
+    exp3_role: "Специалист по производственному учёту", exp3_desc: "Финансовый учёт производственных процессов, подготовка отчётов и поддержка внутреннего аудита.",
+    exp4_role: "Бухгалтер", exp4_desc: "Ведение бухгалтерского учёта, подготовка финансовой отчётности, обработка налоговых деклараций.",
+    exp5_role: "Младший бухгалтер", exp5_desc: "Поддержка бухгалтерской группы, документооборот, платёжные поручения и управление счетами.",
+    exp6_role: "DJ", exp6_desc: "Развлекательные программы в 5-звёздочном международном курорте, живые выступления и координация мероприятий.",
+    exp7_role: "Аниматор / Ассистент DJ", exp7_desc: "Участие в анимационных программах для гостей, координация спортивных мероприятий, обязанности помощника DJ.",
+    exp8_role: "Контроль билетов", exp8_desc: "Оперативный контроль билетов и управление системой доступа.",
+    exp9_role: "Супервайзер – Служба зрителей", exp9_desc: "Руководство командой службы зрителей на 4-х Играх исламской солидарности, координация процедур и потоков гостей.",
+    sec_skills_label: "Навыки", sec_skills_title: "Профессиональные", sec_skills_title2: "Навыки",
+    sk1: "Управление проектами", sk2: "Координация мероприятий", sk3: "Машинное обучение", sk4: "Визуализация данных", sk5: "Бухгалтерия и финансы",
+    soft1: "Лидерство", soft2: "Креативность", soft3: "Аналитическое мышление", soft4: "Командная работа", soft5: "Стрессоустойчивость", soft6: "Коммуникация", soft7: "Многозадачность",
+    sec_edu_label: "Образование", sec_edu_title: "Академический", sec_edu_title2: "Путь",
+    edu1_school: "Бакинский Бизнес Университет", edu1_deg: "Бакалавр – Информационные технологии",
+    edu2_school: "Бакинский Колледж Менеджмента и Технологий", edu2_deg: "Суббакалавр – Информационные технологии",
+    now: "Настоящее",
+    lang_label: "Языки", lang_az: "Азербайджанский", lang_en: "Английский", lang_ru: "Русский", native: "Родной",
+    military_title: "Военная служба", military_val: "Завершена (2021–2023)",
+    sec_contact_label: "Контакт", sec_contact_title: "Давайте", sec_contact_title2: "Свяжемся",
+    c_phone: "Телефон", c_loc: "Местоположение",
+    cta_title: "Давайте работать вместе", cta_desc: "Готов к новым проектам. Открыт к сотрудничеству в сфере масштабных мероприятий, event-координации и управления проектами.", cta_btn: "Написать письмо"
+  }
+};
+
+let currentLang = 'az';
+
+function setLang(lang) {
+  currentLang = lang;
+  const data = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (data[key]) el.textContent = data[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.documentElement.lang = lang;
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // animate skill bars
+      entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Also trigger skill bars on page load if visible
+window.addEventListener('load', () => {
+  document.querySelectorAll('.skill-bar').forEach(bar => {
+    const card = bar.closest('.skill-card');
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      bar.style.width = bar.dataset.pct + '%';
+    }
+  });
+});
+</script>
+</body>
+</html>
