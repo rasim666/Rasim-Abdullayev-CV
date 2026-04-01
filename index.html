@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rasim Abdullayev — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
   --dark: #0C0C0C; --dark2: #121212; --dark3: #1A1A1A; --dark4: #222222;
   --border: rgba(255,255,255,0.07); --text: #D4D4D4; --text-muted: #666;
   --text-dim: #999; --white: #F5F5F0;
-  --font-display: 'Cormorant Garamond', serif; --font-body: 'Outfit', sans-serif;
+  --font-display: 'Cormorant Garamond', serif; --font-body: 'Inter', sans-serif;
   --nav-h: 70px;
 }
 body { background: var(--dark); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
@@ -178,6 +178,7 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
     <button class="lang-btn active" onclick="setLang('az')">AZ</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('tr')">TR</button>
   </div>
 </nav>
 
@@ -297,6 +298,7 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
       <div class="lang-card reveal"><div class="lang-flag">🇦🇿</div><div class="lang-name" data-i18n="lang_az">Azərbaycan dili</div><div class="lang-level" data-i18n="native">Ana dili</div></div>
       <div class="lang-card reveal"><div class="lang-flag">🇬🇧</div><div class="lang-name" data-i18n="lang_en">İngilis dili</div><div class="lang-level">B1</div></div>
       <div class="lang-card reveal"><div class="lang-flag">🇷🇺</div><div class="lang-name" data-i18n="lang_ru">Rus dili</div><div class="lang-level">B1</div></div>
+      <div class="lang-card reveal"><div class="lang-flag">🇹🇷</div><div class="lang-name" data-i18n="lang_tr">Türk dili</div><div class="lang-level">C2</div></div>
       <div class="lang-card reveal"><div class="lang-flag">🪖</div><div class="lang-name" data-i18n="military_title">Hərbi xidmət</div><div class="lang-level" data-i18n="military_val">2021–2023</div></div>
     </div>
   </div>
@@ -534,14 +536,14 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   <div class="contact-grid">
     <div class="contact-info">
       <div class="contact-item reveal"><div class="contact-icon">📞</div><div><div class="contact-label" data-i18n="c_phone">Telefon</div><div class="contact-val"><a href="tel:+994556760115">+994 55 676 01 15</a></div></div></div>
-      <div class="contact-item reveal"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection#0b796a7862666a696f7e67676a726e7d3d4b6c666a626725686466"><span class="__cf_email__" data-cfemail="f98b988a9094989b9d8c959598809c8fcfb99e94989095d79a9694">[email&#160;protected]</span></a></div></div></div>
+      <div class="contact-item reveal"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:rasimabdullayev6@gmail.com">rasimabdullayev6@gmail.com</a></div></div></div>
       <div class="contact-item reveal"><div class="contact-icon">💼</div><div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">linkedin.com/in/rasimabdullayev1997</a></div></div></div>
       <div class="contact-item reveal"><div class="contact-icon">📍</div><div><div class="contact-label" data-i18n="c_loc">Məkan</div><div class="contact-val">Bakı, Azərbaycan</div></div></div>
     </div>
     <div class="contact-cta reveal">
       <div class="cta-title" data-i18n="cta_title">Birlikdə işləyək</div>
       <div class="cta-desc" data-i18n="cta_desc">Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.</div>
-      <a href="/cdn-cgi/l/email-protection#285a495b4145494a4c5d444449514d5e1e684f45494144064b4745" class="btn-primary" data-i18n="cta_btn">Məktub göndər</a>
+      <a href="mailto:rasimabdullayev6@gmail.com" class="btn-primary" data-i18n="cta_btn">Məktub göndər</a>
     </div>
   </div>
 </section></div>
@@ -550,7 +552,7 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   <span>© 2025 Rasim Abdullayev</span>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">LinkedIn</a>
-    <a href="/cdn-cgi/l/email-protection#7e0c1f0d17131f1c1a0b12121f071b08483e19131f1712501d1113">Email</a>
+    <a href="mailto:rasimabdullayev6@gmail.com">Email</a>
   </div>
 </footer>
 
@@ -578,7 +580,7 @@ const i18n = {
     sec_edu_label:"Təhsil",sec_edu_title:"Akademik",sec_edu_title2:"Keçmiş",
     edu1_school:"Bakı Biznes Universiteti",edu1_deg:"Bakalavr – İnformasiya Texnologiyaları",
     edu2_school:"Bakı İdarəetmə və Texnologiya Kolleci",edu2_deg:"Sub-Bakalavr – İnformasiya Texnologiyaları",
-    now:"İndi",lang_label:"Dil Bilikləri",lang_az:"Azərbaycan dili",lang_en:"İngilis dili",lang_ru:"Rus dili",native:"Ana dili",
+    now:"İndi",lang_label:"Dil Bilikləri",lang_az:"Azərbaycan dili",lang_en:"İngilis dili",lang_ru:"Rus dili",lang_tr:"Türk dili",native:"Ana dili",
     military_title:"Hərbi xidmət",military_val:"Tamamlanıb (2021–2023)",
     sec_contact_label:"Əlaqə",sec_contact_title:"Əlaqəyə",sec_contact_title2:"Keç",c_phone:"Telefon",c_loc:"Məkan",
     cta_title:"Birlikdə işləyək",cta_desc:"Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.",cta_btn:"Məktub göndər",
@@ -633,7 +635,7 @@ const i18n = {
     sec_edu_label:"Education",sec_edu_title:"Academic",sec_edu_title2:"Background",
     edu1_school:"Baku Business University",edu1_deg:"Bachelor of Information Technology",
     edu2_school:"Baku Management and Technology College",edu2_deg:"Sub-Bachelor of Information Technology",
-    now:"Present",lang_label:"Languages",lang_az:"Azerbaijani",lang_en:"English",lang_ru:"Russian",native:"Native",
+    now:"Present",lang_label:"Languages",lang_az:"Azerbaijani",lang_en:"English",lang_ru:"Russian",lang_tr:"Turkish",native:"Native",
     military_title:"Military Service",military_val:"Completed (2021–2023)",
     sec_contact_label:"Contact",sec_contact_title:"Let's",sec_contact_title2:"Connect",c_phone:"Phone",c_loc:"Location",
     cta_title:"Let's work together",cta_desc:"Available for new projects. Open to collaboration in large-scale events, event coordination, and project management.",cta_btn:"Send a message",
@@ -688,7 +690,7 @@ const i18n = {
     sec_edu_label:"Образование",sec_edu_title:"Академический",sec_edu_title2:"Путь",
     edu1_school:"Бакинский Бизнес Университет",edu1_deg:"Бакалавр – Информационные технологии",
     edu2_school:"Бакинский Колледж Менеджмента и Технологий",edu2_deg:"Суббакалавр – Информационные технологии",
-    now:"Настоящее",lang_label:"Языки",lang_az:"Азербайджанский",lang_en:"Английский",lang_ru:"Русский",native:"Родной",
+    now:"Настоящее",lang_label:"Языки",lang_az:"Азербайджанский",lang_en:"Английский",lang_ru:"Русский",lang_tr:"Турецкий",native:"Родной",
     military_title:"Военная служба",military_val:"Завершена (2021–2023)",
     sec_contact_label:"Контакт",sec_contact_title:"Давайте",sec_contact_title2:"Свяжемся",c_phone:"Телефон",c_loc:"Местоположение",
     cta_title:"Давайте работать вместе",cta_desc:"Готов к новым проектам. Открыт к сотрудничеству в сфере масштабных мероприятий и управления проектами.",cta_btn:"Написать письмо",
@@ -720,6 +722,61 @@ const i18n = {
     cert19_desc:"Волонтёрский сертификат Formula 1 Grand Prix of Europe 2016",
     cert20_desc:"Проект Формирование молодёжных туристических гидов – 4-е Игры ИС Баку 2017",
     cert21_desc:"Веб-системы (81), MS Office Suite (99), Компьютерная графика (99) – IT курс"
+  },
+  tr: {
+    nav_exp:"Deneyim",nav_skills:"Beceriler",nav_edu:"Eğitim",nav_certs:"Sertifikalar",nav_contact:"İletişim",
+    hero_eyebrow:"Etkinlik Yöneticisi · Proje Koordinatörü",hero_title:"Etkinlik Proje Yöneticisi | Bakü, Azerbaycan",
+    hero_desc:"Büyük ölçekli etkinliklerin planlanması, koordinasyonu ve yönetiminde deneyimli uzman. 8+ yıllık çok sektörlü iş deneyimi.",
+    hero_cta1:"İletişime geç",hero_cta2:"Deneyimi gör",stat1:"Yıl Deneyim",stat2:"Tamamlanan Proje",
+    contact_label:"İletişim",photo_badge:"Etkinlik Yöneticisi",
+    sec_exp_label:"İş Deneyimi",sec_exp_title:"Kariyer",sec_exp_title2:"Yolculuğu",
+    exp1_role:"Venue Bilet Koordinatörü",exp1_desc:"BDT Oyunları 2025 kapsamında tüm biletleme operasyonlarının koordinasyonu, erişim kontrol sistemlerinin yönetimi ve saha ekibi liderliği.",
+    exp2_role:"Etkinlik Proje Yöneticisi",exp2_desc:"Çeşitli ölçeklerdeki etkinliklerin konseptten uygulamaya kadar tam yönetimi. Bütçe planlaması, tedarikçi ilişkileri, lojistik ve ekip koordinasyonu.",
+    exp3_role:"Üretim Muhasebe Uzmanı",exp3_desc:"Üretim süreçlerinin finansal muhasebesi, raporların hazırlanması ve iç denetim desteği.",
+    exp4_role:"Muhasebe Uzmanı",exp4_desc:"Muhasebe kayıtlarının tutulması, mali tablo hazırlama, vergi beyannamesi işleme.",
+    exp5_role:"Muhasebe Uzman Yardımcısı",exp5_desc:"Muhasebe ekibine destek, belge akışı, ödeme emirleri ve fatura yönetimi.",
+    exp6_role:"DJ",exp6_desc:"5 yıldızlı uluslararası bir tesiste eğlence programları, canlı performanslar ve etkinlik koordinasyonu.",
+    exp7_role:"Spor Animatörü / DJ Asistanı",exp7_desc:"Misafir animasyon programları, spor etkinlikleri koordinasyonu ve DJ asistanlığı görevleri.",
+    exp8_role:"Bilet Kontrolü",exp8_desc:"Bilet kontrolü ve erişim yönetim sistemi operasyonları.",
+    exp9_role:"Süpervizör – Seyirci Hizmetleri",exp9_desc:"4. İslam Dayanışma Oyunları'nda seyirci hizmetleri ekibine liderlik, prosedür ve misafir akışı koordinasyonu.",
+    sec_skills_label:"Beceriler",sec_skills_title:"Profesyonel",sec_skills_title2:"Beceriler",
+    sk1:"Proje Yönetimi",sk2:"Etkinlik Koordinasyonu",sk3:"Makine Öğrenmesi",sk4:"Veri Görselleştirme",sk5:"Muhasebe & Finans",
+    soft1:"Liderlik",soft2:"Yaratıcılık",soft3:"Analitik Düşünce",soft4:"Takım Çalışması",soft5:"Stres Direnci",soft6:"İletişim",soft7:"Çoklu Görev",
+    sec_edu_label:"Eğitim",sec_edu_title:"Akademik",sec_edu_title2:"Geçmiş",
+    edu1_school:"Bakü İş Üniversitesi",edu1_deg:"Lisans – Bilgi Teknolojileri",
+    edu2_school:"Bakü Yönetim ve Teknoloji Koleji",edu2_deg:"Ön Lisans – Bilgi Teknolojileri",
+    now:"Günümüz",lang_label:"Dil Bilgisi",lang_az:"Azerbaycanca",lang_en:"İngilizce",lang_ru:"Rusça",lang_tr:"Türkçe",native:"Ana dil",
+    military_title:"Askerlik Hizmeti",military_val:"Tamamlandı (2021–2023)",
+    sec_contact_label:"İletişim",sec_contact_title:"Hadi",sec_contact_title2:"Bağlanalım",c_phone:"Telefon",c_loc:"Konum",
+    cta_title:"Birlikte çalışalım",cta_desc:"Yeni projeler için hazırım. Büyük ölçekli etkinlikler, etkinlik koordinasyonu ve proje yönetimi alanında iş birliğine açığım.",cta_btn:"Mesaj gönder",
+    sec_cert_label:"Sertifikalar",sec_cert_title:"Sertifikalar",sec_cert_title2:"ve Ödüller",
+    cert_total:"Sertifika",cert_orgs:"Organizasyon",cert_years:"Yıl",
+    cf_all:"Tümü",cf_hr:"HackerRank",cf_sport:"Spor",cf_vol:"Gönüllülük",cf_train:"Eğitim",cf_award:"Ödüller",
+    ct_vol:"Gönüllü Sertifikası",ct_app:"Takdir Sertifikası",ct_cert:"Sertifika",ct_dip:"Diploma",ct_thank:"Teşekkür Belgesi",
+    hr1_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",hr2_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",
+    hr3_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",hr4_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",
+    hr5_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",hr6_desc:"HackerRank beceri sertifikasyon testini başarıyla geçti",
+    cert1_desc:"Azerbaycan–Hırvatistan UEFA EURO 2016 Elemeleri maçında gönüllü destek",
+    cert2_desc:"Azerbaycan–İtalya UEFA EURO 2016 Elemeleri maçında gönüllü destek",
+    cert3_desc:"Azerbaycan–İtalya UEFA EURO 2016 Elemeleri maçında gönüllü destek (2.)",
+    cert4_desc:"42. Bakü Dünya Satranç Olimpiyatı'na değerli katkı",
+    cert5_desc:"4. İslam Dayanışma Oyunları – Focus on Solidarity yarışmasında 3. yer",
+    cert6_desc:"UEFA U-17 Şampiyonası Azerbaycan 2016 – IT Departmanı Gönüllüsü",
+    cert7_desc:"Sosyal Medyanın Doğru Kullanımı projesine katılım – Azerbaycan Gençlik Vakfı",
+    cert8_desc:"1. Red Bull Soapbox Race Bakü 2016'nın başarısına katkı",
+    cert9_desc:"1. Avrupa Oyunları Bakü 2015 – Flamekeeper tamamlama sertifikası",
+    cert10_desc:"1. Avrupa Oyunları Bakü 2015 – Flamekeeper görevinin icra sertifikası",
+    cert11_desc:"Startup School Karabağ eğitim ve mentorluk programına katılım",
+    cert12_desc:"4. İslam Dayanışma Oyunları gönüllü gelişim programı – Beden Dili",
+    cert13_desc:"4. İslam Dayanışma Oyunları gönüllü gelişim programı – Başarılı Kariyer",
+    cert14_desc:"4. İslam Dayanışma Oyunları gönüllü gelişim programı – Kendini Keşfet",
+    cert15_desc:"Bakü 2015 – 1. Avrupa Oyunları kapsamında Gençlik Turizm Forumu'na katılım",
+    cert16_desc:"Gençlik Günü Kış Kupası basketbol turnuvasında 3. yer – Celilabad",
+    cert17_desc:"Soğuk Eller, Sıcak Kalpler – Melekler yardım fuarı – Ekip lideri ve organizatör",
+    cert18_desc:"2016 Formula 1 Grand Prix of Europe hazırlık sürecine aktif katılım",
+    cert19_desc:"2016 Formula 1 Grand Prix of Europe gönüllü sertifikası",
+    cert20_desc:"Gençlik Turizm Rehberlerinin Oluşturulması projesi – 4. İslam Dayanışma Oyunları Bakü 2017",
+    cert21_desc:"Web Sistemleri (81), MS Office Suite (99), Bilgisayar Grafikleri (99) – BT kursu tamamlama"
   }
 };
 
