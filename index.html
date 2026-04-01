@@ -139,6 +139,28 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   .lang-bar { padding: 0 20px; }
   .nav-links { display: none; }
 }
+
+/* ── CERTIFICATES ─────────────────────────────── */
+.cert-filters { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+.cert-filter-btn { background:var(--dark3); border:1px solid var(--border); color:var(--text-muted); padding:7px 18px; border-radius:30px; font-size:11px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; font-family:var(--font-body); }
+.cert-filter-btn:hover,.cert-filter-btn.active { background:var(--gold); color:#000; border-color:var(--gold); }
+.cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:22px; }
+.cert-card { background:var(--dark3); border:1px solid var(--border); border-radius:12px; padding:26px 26px 22px; position:relative; overflow:hidden; transition:border-color 0.3s,transform 0.3s; }
+.cert-card:hover { border-color:rgba(201,168,76,0.4); transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,0.4); }
+.cert-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),transparent); }
+.cert-tag { display:inline-block; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); background:var(--gold-dim); border:1px solid rgba(201,168,76,0.2); padding:3px 12px; border-radius:20px; margin-bottom:14px; }
+.cert-org { font-size:15px; font-weight:500; color:var(--white); margin-bottom:7px; line-height:1.3; }
+.cert-title-text { font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:14px; }
+.cert-footer { display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid var(--border); }
+.cert-date { font-size:12px; color:var(--gold); letter-spacing:1px; }
+.cert-icon { width:34px; height:34px; background:var(--gold-dim); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px; }
+.cert-stats-row { display:flex; gap:40px; margin-bottom:48px; }
+.csr-item { text-align:center; }
+.csr-num { font-family:var(--font-display); font-size:44px; font-weight:700; color:var(--gold); line-height:1; }
+.csr-lbl { font-size:11px; color:var(--text-muted); margin-top:4px; letter-spacing:1px; text-transform:uppercase; }
+.hr-badge { display:inline-flex; align-items:center; gap:6px; background:#1a1a2e; border:1px solid #00ea64; border-radius:6px; padding:3px 10px; font-size:10px; color:#00ea64; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+.hr-dot { width:7px; height:7px; background:#00ea64; border-radius:50%; }
+
 </style>
 </head>
 <body>
@@ -149,6 +171,7 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
     <li><a href="#experience" data-i18n="nav_exp">Təcrübə</a></li>
     <li><a href="#skills" data-i18n="nav_skills">Bacarıqlar</a></li>
     <li><a href="#education" data-i18n="nav_edu">Təhsil</a></li>
+    <li><a href="#certificates" data-i18n="nav_certs">Sertifikatlar</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Əlaqə</a></li>
   </ul>
   <div class="lang-btns">
@@ -205,7 +228,7 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
         </div>
         <div class="contact-row">
           <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          <a href="mailto:rasimabdullayev6@gmail.com">rasimabdullayev6@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#c8baa9bba1a5a9aaacbda4a4a9b1adbefe88afa5a9a1a4e6aba7a5"><span class="__cf_email__" data-cfemail="dcaebdafb5b1bdbeb8a9b0b0bda5b9aaea9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a>
         </div>
         <div class="contact-row">
           <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
@@ -279,6 +302,230 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   </div>
 </section>
 
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <p class="section-label" data-i18n="sec_cert_label">Sertifikatlar</p>
+  <h2 class="section-title"><strong data-i18n="sec_cert_title">Sertifikat</strong> <span data-i18n="sec_cert_title2">&amp; Mükafatlar</span></h2>
+  <div class="section-divider"></div>
+
+  <div class="cert-stats-row reveal">
+    <div class="csr-item"><div class="csr-num">27</div><div class="csr-lbl" data-i18n="cert_total">Sertifikat</div></div>
+    <div class="csr-item"><div class="csr-num">9</div><div class="csr-lbl" data-i18n="cert_orgs">Təşkilat</div></div>
+    <div class="csr-item"><div class="csr-num">10+</div><div class="csr-lbl" data-i18n="cert_years">İl</div></div>
+  </div>
+
+  <div class="cert-filters">
+    <button class="cert-filter-btn active" data-cat="all" data-i18n="cf_all">Hamısı</button>
+    <button class="cert-filter-btn" data-cat="hackerrank" data-i18n="cf_hr">HackerRank</button>
+    <button class="cert-filter-btn" data-cat="sport" data-i18n="cf_sport">İdman</button>
+    <button class="cert-filter-btn" data-cat="volunteer" data-i18n="cf_vol">Könüllülük</button>
+    <button class="cert-filter-btn" data-cat="training" data-i18n="cf_train">Təlim</button>
+    <button class="cert-filter-btn" data-cat="award" data-i18n="cf_award">Mükafat</button>
+  </div>
+
+  <div class="cert-grid" id="certGrid">
+
+    <!-- HackerRank certs -->
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">JavaScript (Intermediate)</div>
+      <div class="cert-title-text" data-i18n="hr1_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">24 Feb, 2026 · ID: 3CF1FC6C849C</span><div class="cert-icon">⚡</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">SQL (Basic)</div>
+      <div class="cert-title-text" data-i18n="hr2_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">23 Feb, 2026 · ID: 476D168403CE</span><div class="cert-icon">🗄️</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">Python (Basic)</div>
+      <div class="cert-title-text" data-i18n="hr3_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">15 Mar, 2026 · ID: E0ED70684D2A</span><div class="cert-icon">🐍</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">C# (Basic)</div>
+      <div class="cert-title-text" data-i18n="hr4_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">15 Mar, 2026 · ID: 2AFCA3628DB0</span><div class="cert-icon">💎</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">CSS (Basic)</div>
+      <div class="cert-title-text" data-i18n="hr5_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">15 Mar, 2026 · ID: A8437F67CC56</span><div class="cert-icon">🎨</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="hackerrank training">
+      <div class="hr-badge"><div class="hr-dot"></div>HackerRank</div>
+      <div class="cert-org">Problem Solving (Basic)</div>
+      <div class="cert-title-text" data-i18n="hr6_desc">HackerRank bacarıq sertifikasiya testini uğurla keçib</div>
+      <div class="cert-footer"><span class="cert-date">15 Mar, 2026 · ID: CCD2B700697D</span><div class="cert-icon">🧩</div></div>
+    </div>
+
+    <!-- AFFA / UEFA -->
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_vol">Könüllü Sertifikat</div>
+      <div class="cert-org">AFFA</div>
+      <div class="cert-title-text" data-i18n="cert1_desc">Azərbaycan–Xorvatiya UEFA EURO 2016 Keçiricisi Matçında könüllü fəaliyyətinə görə</div>
+      <div class="cert-footer"><span class="cert-date">03.09.2015</span><div class="cert-icon">⚽</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_vol">Könüllü Sertifikat</div>
+      <div class="cert-org">AFFA</div>
+      <div class="cert-title-text" data-i18n="cert2_desc">Azərbaycan–İtaliya UEFA EURO 2016 Keçiricisi Matçında könüllü fəaliyyətinə görə</div>
+      <div class="cert-footer"><span class="cert-date">10.10.2015</span><div class="cert-icon">⚽</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_vol">Könüllü Sertifikat</div>
+      <div class="cert-org">AFFA</div>
+      <div class="cert-title-text" data-i18n="cert3_desc">Azərbaycan–İtaliya UEFA EURO 2016 Matçında könüllü fəaliyyətinə görə (2-ci)</div>
+      <div class="cert-footer"><span class="cert-date">10.10.2015</span><div class="cert-icon">⚽</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_vol">Könüllü Sertifikat</div>
+      <div class="cert-org">UEFA / AFFA</div>
+      <div class="cert-title-text" data-i18n="cert6_desc">UEFA U-17 Avropa Çempionatı Azərbaycan 2016 – IT şöbəsində könüllü</div>
+      <div class="cert-footer"><span class="cert-date">May 2016</span><div class="cert-icon">🏆</div></div>
+    </div>
+
+    <!-- Chess / Islamic Games -->
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_app">Fəxri Sertifikat</div>
+      <div class="cert-org">FIDE / Baku 2016</div>
+      <div class="cert-title-text" data-i18n="cert4_desc">42-ci Bakı Dünya Şahmat Olimpiadasına dəyərli töhfəyə görə</div>
+      <div class="cert-footer"><span class="cert-date">01.09 – 14.09.2016</span><div class="cert-icon">♟️</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport award">
+      <div class="cert-tag" data-i18n="ct_app">Fəxri Sertifikat</div>
+      <div class="cert-org">AISGOC / Baku 2017</div>
+      <div class="cert-title-text" data-i18n="cert5_desc">4-cü İslam Həmrəyliyi Oyunları – "Focus on Solidarity" müsabiqəsində 3-cü yer</div>
+      <div class="cert-footer"><span class="cert-date">Baku 2017</span><div class="cert-icon">🏅</div></div>
+    </div>
+
+    <!-- Baku 2015 European Games -->
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">Baku 2015 – 1st European Games</div>
+      <div class="cert-title-text" data-i18n="cert9_desc">Birinci Avropa Oyunlarında Flamkeeper tamamlama sertifikatı</div>
+      <div class="cert-footer"><span class="cert-date">12–28.06.2015</span><div class="cert-icon">🔥</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">Baku 2015 – 1st European Games</div>
+      <div class="cert-title-text" data-i18n="cert10_desc">Birinci Avropa Oyunlarında Flamekeeper vəzifəsinin icrası sertifikatı</div>
+      <div class="cert-footer"><span class="cert-date">12–28.06.2015</span><div class="cert-icon">🔥</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_cert">Şəhadətnamə</div>
+      <div class="cert-org">BEGOC / Azərbaycan Gənclər Fondu</div>
+      <div class="cert-title-text" data-i18n="cert15_desc">Baku 2015 – Birinci Avropa Oyunları çərçivəsində Gənclərin Turizm Forumunda iştirak</div>
+      <div class="cert-footer"><span class="cert-date">23.05.2015</span><div class="cert-icon">🌍</div></div>
+    </div>
+
+    <!-- Formula 1 -->
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_thank">Təşəkkür Sertifikatı</div>
+      <div class="cert-org">Baku City Circuit</div>
+      <div class="cert-title-text" data-i18n="cert18_desc">2016 Formula 1 Grand Prix of Europe – aktiv fəaliyyətinə görə</div>
+      <div class="cert-footer"><span class="cert-date">2016</span><div class="cert-icon">🏁</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">Baku City Circuit</div>
+      <div class="cert-title-text" data-i18n="cert19_desc">2016 Formula 1 Grand Prix of Europe – könüllü iştirak sertifikatı</div>
+      <div class="cert-footer"><span class="cert-date">17–19.06.2016</span><div class="cert-icon">🏎️</div></div>
+    </div>
+
+    <!-- Red Bull -->
+    <div class="cert-card reveal" data-cat="sport volunteer">
+      <div class="cert-tag" data-i18n="ct_vol">Könüllü Sertifikat</div>
+      <div class="cert-org">Red Bull Soapbox Race</div>
+      <div class="cert-title-text" data-i18n="cert8_desc">1-ci Red Bull Soapbox Race Bakı 2016-nın uğuruna töhfəyə görə</div>
+      <div class="cert-footer"><span class="cert-date">2016</span><div class="cert-icon">🏎️</div></div>
+    </div>
+
+    <!-- Islamic Solidarity BP -->
+    <div class="cert-card reveal" data-cat="volunteer training">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">AISGOC / BP – Baku 2017</div>
+      <div class="cert-title-text" data-i18n="cert12_desc">4-cü İslam Həmrəyliyi Oyunları – "Bədən dili" könüllü inkişaf proqramı</div>
+      <div class="cert-footer"><span class="cert-date">Baku 2017</span><div class="cert-icon">🤝</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="volunteer training">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">AISGOC / BP – Baku 2017</div>
+      <div class="cert-title-text" data-i18n="cert13_desc">4-cü İslam Həmrəyliyi Oyunları – "Uğurlu Karyera" könüllü inkişaf proqramı</div>
+      <div class="cert-footer"><span class="cert-date">Baku 2017</span><div class="cert-icon">💼</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="volunteer training">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">AISGOC / BP – Baku 2017</div>
+      <div class="cert-title-text" data-i18n="cert14_desc">4-cü İslam Həmrəyliyi Oyunları – "Özünü Kəşf et" könüllü inkişaf proqramı</div>
+      <div class="cert-footer"><span class="cert-date">Baku 2017</span><div class="cert-icon">🌟</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport volunteer training">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">AISGOC / IB Club / Gənclər Fondu</div>
+      <div class="cert-title-text" data-i18n="cert20_desc">"Banc turizm bələdçilərinin formalaşması" layihəsində iştirak – Baku 2017</div>
+      <div class="cert-footer"><span class="cert-date">Baku 2017</span><div class="cert-icon">🗺️</div></div>
+    </div>
+
+    <!-- Training -->
+    <div class="cert-card reveal" data-cat="training">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">Karabakh Training Center / Enterprise Azerbaijan</div>
+      <div class="cert-title-text" data-i18n="cert11_desc">"Startup School – Qarabağ" layihəsinin təlim və mentorluq proqramında iştirak</div>
+      <div class="cert-footer"><span class="cert-date">28.02.2026 · Xankəndi</span><div class="cert-icon">🚀</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="training">
+      <div class="cert-tag" data-i18n="ct_cert">Universitet Sertifikatı</div>
+      <div class="cert-org">Bakı Biznes Universiteti</div>
+      <div class="cert-title-text" data-i18n="cert21_desc">Veb sistemləri (81), MS Office Suite (99), Komputer qrafikası (99) – IT kursu tamamlama</div>
+      <div class="cert-footer"><span class="cert-date">2024–2025</span><div class="cert-icon">🎓</div></div>
+    </div>
+
+    <!-- Other -->
+    <div class="cert-card reveal" data-cat="training award">
+      <div class="cert-tag" data-i18n="ct_cert">Sertifikat</div>
+      <div class="cert-org">Azərbaycan Gənclər Fondu</div>
+      <div class="cert-title-text" data-i18n="cert7_desc">"Sosial şəbəkələrdən düzgün istifadə" layihəsində iştirakına görə</div>
+      <div class="cert-footer"><span class="cert-date">2015</span><div class="cert-icon">📱</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="volunteer award">
+      <div class="cert-tag" data-i18n="ct_thank">Təşəkkürnamə</div>
+      <div class="cert-org">Nargis Fund / Anabola Events</div>
+      <div class="cert-title-text" data-i18n="cert17_desc">"Soyuq Ellər, İsti Ürək – Mələklər" xeyriyyə yarmarkasında komanda rəhbəri</div>
+      <div class="cert-footer"><span class="cert-date">12.01.2016</span><div class="cert-icon">❤️</div></div>
+    </div>
+
+    <div class="cert-card reveal" data-cat="sport award">
+      <div class="cert-tag" data-i18n="ct_dip">Diplom</div>
+      <div class="cert-org">AR Gənclər və İdman Nazirliyi</div>
+      <div class="cert-title-text" data-i18n="cert16_desc">Gənclər günü "Qış kuboku" basketbol turnirində 3-cü yer – Cəlilabad</div>
+      <div class="cert-footer"><span class="cert-date">27.01–03.02.2013</span><div class="cert-icon">🏀</div></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="section-wrapper"><section id="contact">
   <p class="section-label" data-i18n="sec_contact_label">Əlaqə</p>
@@ -287,14 +534,14 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   <div class="contact-grid">
     <div class="contact-info">
       <div class="contact-item reveal"><div class="contact-icon">📞</div><div><div class="contact-label" data-i18n="c_phone">Telefon</div><div class="contact-val"><a href="tel:+994556760115">+994 55 676 01 15</a></div></div></div>
-      <div class="contact-item reveal"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:rasimabdullayev6@gmail.com">rasimabdullayev6@gmail.com</a></div></div></div>
+      <div class="contact-item reveal"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection#0b796a7862666a696f7e67676a726e7d3d4b6c666a626725686466"><span class="__cf_email__" data-cfemail="f98b988a9094989b9d8c959598809c8fcfb99e94989095d79a9694">[email&#160;protected]</span></a></div></div></div>
       <div class="contact-item reveal"><div class="contact-icon">💼</div><div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">linkedin.com/in/rasimabdullayev1997</a></div></div></div>
       <div class="contact-item reveal"><div class="contact-icon">📍</div><div><div class="contact-label" data-i18n="c_loc">Məkan</div><div class="contact-val">Bakı, Azərbaycan</div></div></div>
     </div>
     <div class="contact-cta reveal">
       <div class="cta-title" data-i18n="cta_title">Birlikdə işləyək</div>
       <div class="cta-desc" data-i18n="cta_desc">Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.</div>
-      <a href="mailto:rasimabdullayev6@gmail.com" class="btn-primary" data-i18n="cta_btn">Məktub göndər</a>
+      <a href="/cdn-cgi/l/email-protection#285a495b4145494a4c5d444449514d5e1e684f45494144064b4745" class="btn-primary" data-i18n="cta_btn">Məktub göndər</a>
     </div>
   </div>
 </section></div>
@@ -303,28 +550,234 @@ footer { border-top: 1px solid var(--border); padding: 30px 80px; display: flex;
   <span>© 2025 Rasim Abdullayev</span>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank">LinkedIn</a>
-    <a href="mailto:rasimabdullayev6@gmail.com">Email</a>
+    <a href="/cdn-cgi/l/email-protection#7e0c1f0d17131f1c1a0b12121f071b08483e19131f1712501d1113">Email</a>
   </div>
 </footer>
 
 <script>
 const i18n = {
-  az: { nav_exp:"Təcrübə",nav_skills:"Bacarıqlar",nav_edu:"Təhsil",nav_contact:"Əlaqə",hero_eyebrow:"Event Manager · Layihə Koordinatoru",hero_title:"Event Layihə Meneceri | Bakı, Azərbaycan",hero_desc:"Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarəedilməsini həyata keçirən təcrübəli mütəxəssis. 8+ illik müxtəlif sektorda iş təcrübəsi.",hero_cta1:"Əlaqə yarat",hero_cta2:"Təcrübəyə bax",stat1:"İl İş Təcrübəsi",stat2:"Tamamlanmış Layihə",contact_label:"Əlaqə",photo_badge:"Event Manager",sec_exp_label:"İş Təcrübəsi",sec_exp_title:"Karyera",sec_exp_title2:"Yolu",exp1_role:"Venue Ticketing Coordinator",exp1_desc:"CİS Oyunları 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş nəzarəti sistemlərinin idarə edilməsi və komanda rəhbərliyi.",exp2_role:"Event Project Manager",exp2_desc:"Müxtəlif miqyaslı tədbirlərin konsepsiyadan icraya qədər tam idarə edilməsi. Büdcə planlaması, vendor münasibətləri, komanda koordinasiyası.",exp3_role:"Production Accounting Specialist",exp3_desc:"İstehsalat proseslərinin maliyyə uçotunun aparılması, hesabatların hazırlanması və daxili audit dəstəyi.",exp4_role:"Accounting Specialist",exp4_desc:"Mühasibat uçotunun aparılması, maliyyə hesabatlarının hazırlanması, vergi bəyannamələrinin işlənməsi.",exp5_role:"Junior Accounting Specialist",exp5_desc:"Mühasibat qrupuna dəstək, sənəd dövriyyəsi, ödəmə əmrləri və hesab-faktura idarəetməsi.",exp6_role:"DJ",exp6_desc:"5 ulduzlu beynəlxalq oteldə əyləncə proqramlarının aparılması, canlı performans və tədbirlərin koordinasiyası.",exp7_role:"Land Sport / DJ Assistant",exp7_desc:"Qonaq animasiya proqramlarında iştirak, idman tədbirlərinin koordinasiyası, DJ köməkçisi vəzifəsinin icra edilməsi.",exp8_role:"Ticket Control",exp8_desc:"Bilet nəzarəti və giriş idarəetməsi sisteminin operativ icrası.",exp9_role:"Supervisor – Spectator Service",exp9_desc:"Beynəlxalq Olimpiad çərçivəsində tamaşaçı xidmətləri qrupuna rəhbərlik, prosedurların koordinasiyası.",sec_skills_label:"Bacarıqlar",sec_skills_title:"Peşəkar",sec_skills_title2:"Bacarıqlar",sk1:"Layihə İdarəetməsi",sk2:"Tədbir Koordinasiyası",sk3:"Maşın Öyrənməsi",sk4:"Məlumat Vizuallaşdırması",sk5:"Mühasibat & Maliyyə",soft1:"Liderlik",soft2:"Yaradıcılıq",soft3:"Analitik Düşüncə",soft4:"Komanda İşi",soft5:"Stressə Davamlılıq",soft6:"Ünsiyyət",soft7:"Çoxtapşırıqlılıq",sec_edu_label:"Təhsil",sec_edu_title:"Akademik",sec_edu_title2:"Keçmiş",edu1_school:"Bakı Biznes Universiteti",edu1_deg:"Bakalavr – İnformasiya Texnologiyaları",edu2_school:"Bakı İdarəetmə və Texnologiya Kolleci",edu2_deg:"Sub-Bakalavr – İnformasiya Texnologiyaları",now:"İndi",lang_label:"Dil Bilikləri",lang_az:"Azərbaycan dili",lang_en:"İngilis dili",lang_ru:"Rus dili",native:"Ana dili",military_title:"Hərbi xidmət",military_val:"Tamamlanıb (2021–2023)",sec_contact_label:"Əlaqə",sec_contact_title:"Əlaqəyə",sec_contact_title2:"Keç",c_phone:"Telefon",c_loc:"Məkan",cta_title:"Birlikdə işləyək",cta_desc:"Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.",cta_btn:"Məktub göndər" },
-  en: { nav_exp:"Experience",nav_skills:"Skills",nav_edu:"Education",nav_contact:"Contact",hero_eyebrow:"Event Manager · Project Coordinator",hero_title:"Event Project Manager | Baku, Azerbaijan",hero_desc:"Experienced professional managing large-scale events from concept to completion. 8+ years of cross-sector work experience.",hero_cta1:"Get in touch",hero_cta2:"View experience",stat1:"Years of Experience",stat2:"Projects Completed",contact_label:"Contact",photo_badge:"Event Manager",sec_exp_label:"Work Experience",sec_exp_title:"Career",sec_exp_title2:"Journey",exp1_role:"Venue Ticketing Coordinator",exp1_desc:"Coordinated all ticketing operations for the CIS Games 2025, managed access control systems, and led on-site team operations.",exp2_role:"Event Project Manager",exp2_desc:"End-to-end management of events across various scales. Budget planning, vendor relations, logistics and team coordination.",exp3_role:"Production Accounting Specialist",exp3_desc:"Financial accounting for production processes, preparation of reports and internal audit support.",exp4_role:"Accounting Specialist",exp4_desc:"Bookkeeping, financial statement preparation, tax declaration processing.",exp5_role:"Junior Accounting Specialist",exp5_desc:"Support for accounting team, document workflow, payment orders and invoice management.",exp6_role:"DJ",exp6_desc:"Entertainment programming at a 5-star international resort, live performances and event coordination.",exp7_role:"Land Sport / DJ Assistant",exp7_desc:"Guest animation programs, sports event coordination, and DJ assistant duties.",exp8_role:"Ticket Control",exp8_desc:"Ticketing control and access management system operations.",exp9_role:"Supervisor – Spectator Service",exp9_desc:"Leading spectator services team at the 4th Islamic Solidarity Games, coordinating procedures and guest flow.",sec_skills_label:"Skills",sec_skills_title:"Professional",sec_skills_title2:"Skills",sk1:"Project Management",sk2:"Event Coordination",sk3:"Machine Learning",sk4:"Data Visualization",sk5:"Accounting & Finance",soft1:"Leadership",soft2:"Creativity",soft3:"Analytical Thinking",soft4:"Teamwork",soft5:"Stress Resilience",soft6:"Communication",soft7:"Multitasking",sec_edu_label:"Education",sec_edu_title:"Academic",sec_edu_title2:"Background",edu1_school:"Baku Business University",edu1_deg:"Bachelor of Information Technology",edu2_school:"Baku Management and Technology College",edu2_deg:"Sub-Bachelor of Information Technology",now:"Present",lang_label:"Languages",lang_az:"Azerbaijani",lang_en:"English",lang_ru:"Russian",native:"Native",military_title:"Military Service",military_val:"Completed (2021–2023)",sec_contact_label:"Contact",sec_contact_title:"Let's",sec_contact_title2:"Connect",c_phone:"Phone",c_loc:"Location",cta_title:"Let's work together",cta_desc:"Available for new projects. Open to collaboration in large-scale events, event coordination, and project management.",cta_btn:"Send a message" },
-  ru: { nav_exp:"Опыт",nav_skills:"Навыки",nav_edu:"Образование",nav_contact:"Контакт",hero_eyebrow:"Event-менеджер · Координатор проектов",hero_title:"Event Project Manager | Баку, Азербайджан",hero_desc:"Опытный специалист в организации и управлении масштабными мероприятиями. Более 8 лет работы в различных секторах.",hero_cta1:"Связаться",hero_cta2:"Просмотреть опыт",stat1:"Лет Опыта",stat2:"Завершённых Проектов",contact_label:"Контакты",photo_badge:"Event-менеджер",sec_exp_label:"Опыт работы",sec_exp_title:"Карьерный",sec_exp_title2:"Путь",exp1_role:"Координатор билетной службы",exp1_desc:"Координация всех операций с билетами на Играх СНГ 2025, управление системами контроля доступа и руководство командой.",exp2_role:"Event Project Manager",exp2_desc:"Полное управление мероприятиями от концепции до реализации. Бюджетное планирование, работа с подрядчиками, координация команды.",exp3_role:"Специалист по производственному учёту",exp3_desc:"Финансовый учёт производственных процессов, подготовка отчётов и поддержка внутреннего аудита.",exp4_role:"Бухгалтер",exp4_desc:"Ведение бухгалтерского учёта, подготовка финансовой отчётности, обработка налоговых деклараций.",exp5_role:"Младший бухгалтер",exp5_desc:"Поддержка бухгалтерской группы, документооборот, платёжные поручения и управление счетами.",exp6_role:"DJ",exp6_desc:"Развлекательные программы в 5-звёздочном международном курорте, живые выступления и координация мероприятий.",exp7_role:"Аниматор / Ассистент DJ",exp7_desc:"Участие в анимационных программах для гостей, координация спортивных мероприятий.",exp8_role:"Контроль билетов",exp8_desc:"Оперативный контроль билетов и управление системой доступа.",exp9_role:"Супервайзер – Служба зрителей",exp9_desc:"Руководство командой службы зрителей на 4-х Играх исламской солидарности.",sec_skills_label:"Навыки",sec_skills_title:"Профессиональные",sec_skills_title2:"Навыки",sk1:"Управление проектами",sk2:"Координация мероприятий",sk3:"Машинное обучение",sk4:"Визуализация данных",sk5:"Бухгалтерия и финансы",soft1:"Лидерство",soft2:"Креативность",soft3:"Аналитическое мышление",soft4:"Командная работа",soft5:"Стрессоустойчивость",soft6:"Коммуникация",soft7:"Многозадачность",sec_edu_label:"Образование",sec_edu_title:"Академический",sec_edu_title2:"Путь",edu1_school:"Бакинский Бизнес Университет",edu1_deg:"Бакалавр – Информационные технологии",edu2_school:"Бакинский Колледж Менеджмента и Технологий",edu2_deg:"Суббакалавр – Информационные технологии",now:"Настоящее",lang_label:"Языки",lang_az:"Азербайджанский",lang_en:"Английский",lang_ru:"Русский",native:"Родной",military_title:"Военная служба",military_val:"Завершена (2021–2023)",sec_contact_label:"Контакт",sec_contact_title:"Давайте",sec_contact_title2:"Свяжемся",c_phone:"Телефон",c_loc:"Местоположение",cta_title:"Давайте работать вместе",cta_desc:"Готов к новым проектам. Открыт к сотрудничеству в сфере масштабных мероприятий и управления проектами.",cta_btn:"Написать письмо" }
+  az: {
+    nav_exp:"Təcrübə",nav_skills:"Bacarıqlar",nav_edu:"Təhsil",nav_certs:"Sertifikatlar",nav_contact:"Əlaqə",
+    hero_eyebrow:"Event Manager · Layihə Koordinatoru",hero_title:"Event Layihə Meneceri | Bakı, Azərbaycan",
+    hero_desc:"Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarəedilməsini həyata keçirən təcrübəli mütəxəssis. 8+ illik müxtəlif sektorda iş təcrübəsi.",
+    hero_cta1:"Əlaqə yarat",hero_cta2:"Təcrübəyə bax",stat1:"İl İş Təcrübəsi",stat2:"Tamamlanmış Layihə",
+    contact_label:"Əlaqə",photo_badge:"Event Manager",
+    sec_exp_label:"İş Təcrübəsi",sec_exp_title:"Karyera",sec_exp_title2:"Yolu",
+    exp1_role:"Venue Ticketing Coordinator",exp1_desc:"CİS Oyunları 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş nəzarəti sistemlərinin idarə edilməsi və komanda rəhbərliyi.",
+    exp2_role:"Event Project Manager",exp2_desc:"Müxtəlif miqyaslı tədbirlərin konsepsiyadan icraya qədər tam idarə edilməsi. Büdcə planlaması, vendor münasibətləri, komanda koordinasiyası.",
+    exp3_role:"Production Accounting Specialist",exp3_desc:"İstehsalat proseslərinin maliyyə uçotunun aparılması, hesabatların hazırlanması və daxili audit dəstəyi.",
+    exp4_role:"Accounting Specialist",exp4_desc:"Mühasibat uçotunun aparılması, maliyyə hesabatlarının hazırlanması, vergi bəyannamələrinin işlənməsi.",
+    exp5_role:"Junior Accounting Specialist",exp5_desc:"Mühasibat qrupuna dəstək, sənəd dövriyyəsi, ödəmə əmrləri və hesab-faktura idarəetməsi.",
+    exp6_role:"DJ",exp6_desc:"5 ulduzlu beynəlxalq oteldə əyləncə proqramlarının aparılması, canlı performans və tədbirlərin koordinasiyası.",
+    exp7_role:"Land Sport / DJ Assistant",exp7_desc:"Qonaq animasiya proqramlarında iştirak, idman tədbirlərinin koordinasiyası, DJ köməkçisi vəzifəsinin icra edilməsi.",
+    exp8_role:"Ticket Control",exp8_desc:"Bilet nəzarəti və giriş idarəetməsi sisteminin operativ icrası.",
+    exp9_role:"Supervisor – Spectator Service",exp9_desc:"Beynəlxalq Olimpiad çərçivəsində tamaşaçı xidmətləri qrupuna rəhbərlik, prosedurların koordinasiyası.",
+    sec_skills_label:"Bacarıqlar",sec_skills_title:"Peşəkar",sec_skills_title2:"Bacarıqlar",
+    sk1:"Layihə İdarəetməsi",sk2:"Tədbir Koordinasiyası",sk3:"Maşın Öyrənməsi",sk4:"Məlumat Vizuallaşdırması",sk5:"Mühasibat & Maliyyə",
+    soft1:"Liderlik",soft2:"Yaradıcılıq",soft3:"Analitik Düşüncə",soft4:"Komanda İşi",soft5:"Stressə Davamlılıq",soft6:"Ünsiyyət",soft7:"Çoxtapşırıqlılıq",
+    sec_edu_label:"Təhsil",sec_edu_title:"Akademik",sec_edu_title2:"Keçmiş",
+    edu1_school:"Bakı Biznes Universiteti",edu1_deg:"Bakalavr – İnformasiya Texnologiyaları",
+    edu2_school:"Bakı İdarəetmə və Texnologiya Kolleci",edu2_deg:"Sub-Bakalavr – İnformasiya Texnologiyaları",
+    now:"İndi",lang_label:"Dil Bilikləri",lang_az:"Azərbaycan dili",lang_en:"İngilis dili",lang_ru:"Rus dili",native:"Ana dili",
+    military_title:"Hərbi xidmət",military_val:"Tamamlanıb (2021–2023)",
+    sec_contact_label:"Əlaqə",sec_contact_title:"Əlaqəyə",sec_contact_title2:"Keç",c_phone:"Telefon",c_loc:"Məkan",
+    cta_title:"Birlikdə işləyək",cta_desc:"Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.",cta_btn:"Məktub göndər",
+    sec_cert_label:"Sertifikatlar",sec_cert_title:"Sertifikat",sec_cert_title2:"& Mükafatlar",
+    cert_total:"Sertifikat",cert_orgs:"Təşkilat",cert_years:"İl",
+    cf_all:"Hamısı",cf_hr:"HackerRank",cf_sport:"İdman",cf_vol:"Könüllülük",cf_train:"Təlim",cf_award:"Mükafat",
+    ct_vol:"Könüllü Sertifikat",ct_app:"Fəxri Sertifikat",ct_cert:"Sertifikat",ct_dip:"Diplom",ct_thank:"Təşəkkürnamə",
+    hr1_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",hr2_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",
+    hr3_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",hr4_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",
+    hr5_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",hr6_desc:"HackerRank bacarıq sertifikasiya testini uğurla keçib",
+    cert1_desc:"Azərbaycan–Xorvatiya UEFA EURO 2016 Matçında könüllü fəaliyyətinə görə",
+    cert2_desc:"Azərbaycan–İtaliya UEFA EURO 2016 Matçında könüllü fəaliyyətinə görə",
+    cert3_desc:"Azərbaycan–İtaliya UEFA EURO 2016 Matçında könüllü fəaliyyətinə görə (2-ci)",
+    cert4_desc:"42-ci Bakı Dünya Şahmat Olimpiadasına dəyərli töhfəyə görə",
+    cert5_desc:"4-cü İslam Həmrəyliyi Oyunları – Focus on Solidarity müsabiqəsində 3-cü yer",
+    cert6_desc:"UEFA U-17 Avropa Çempionatı Azərbaycan 2016 – IT şöbəsində könüllü",
+    cert7_desc:"Sosial şəbəkələrdən düzgün istifadə layihəsində iştirakına görə",
+    cert8_desc:"1-ci Red Bull Soapbox Race Bakı 2016-nın uğuruna töhfəyə görə",
+    cert9_desc:"Birinci Avropa Oyunlarında Flamkeeper tamamlama sertifikatı",
+    cert10_desc:"Birinci Avropa Oyunlarında Flamekeeper vəzifəsinin icrası sertifikatı",
+    cert11_desc:"Startup School – Qarabağ layihəsinin təlim və mentorluq proqramında iştirak",
+    cert12_desc:"4-cü İslam Həmrəyliyi Oyunları – Bədən dili könüllü inkişaf proqramı",
+    cert13_desc:"4-cü İslam Həmrəyliyi Oyunları – Uğurlu Karyera könüllü inkişaf proqramı",
+    cert14_desc:"4-cü İslam Həmrəyliyi Oyunları – Özünü Kəşf et könüllü inkişaf proqramı",
+    cert15_desc:"Baku 2015 – Birinci Avropa Oyunları çərçivəsində Gənclərin Turizm Forumunda iştirak",
+    cert16_desc:"Gənclər günü Qış kuboku basketbol turnirində 3-cü yer – Cəlilabad",
+    cert17_desc:"Soyuq Ellər, İsti Ürək – Mələklər xeyriyyə yarmarkasında komanda rəhbəri",
+    cert18_desc:"2016 Formula 1 Grand Prix of Europe – aktiv fəaliyyətinə görə",
+    cert19_desc:"2016 Formula 1 Grand Prix of Europe – könüllü iştirak sertifikatı",
+    cert20_desc:"Banc turizm bələdçilərinin formalaşması layihəsində iştirak – Baku 2017",
+    cert21_desc:"Veb sistemləri (81), MS Office Suite (99), Komputer qrafikası (99) – IT kursu"
+  },
+  en: {
+    nav_exp:"Experience",nav_skills:"Skills",nav_edu:"Education",nav_certs:"Certificates",nav_contact:"Contact",
+    hero_eyebrow:"Event Manager · Project Coordinator",hero_title:"Event Project Manager | Baku, Azerbaijan",
+    hero_desc:"Experienced professional managing large-scale events from concept to completion. 8+ years of cross-sector work experience.",
+    hero_cta1:"Get in touch",hero_cta2:"View experience",stat1:"Years of Experience",stat2:"Projects Completed",
+    contact_label:"Contact",photo_badge:"Event Manager",
+    sec_exp_label:"Work Experience",sec_exp_title:"Career",sec_exp_title2:"Journey",
+    exp1_role:"Venue Ticketing Coordinator",exp1_desc:"Coordinated all ticketing operations for the CIS Games 2025, managed access control systems, and led on-site team operations.",
+    exp2_role:"Event Project Manager",exp2_desc:"End-to-end management of events across various scales. Budget planning, vendor relations, logistics and team coordination.",
+    exp3_role:"Production Accounting Specialist",exp3_desc:"Financial accounting for production processes, preparation of reports and internal audit support.",
+    exp4_role:"Accounting Specialist",exp4_desc:"Bookkeeping, financial statement preparation, tax declaration processing.",
+    exp5_role:"Junior Accounting Specialist",exp5_desc:"Support for accounting team, document workflow, payment orders and invoice management.",
+    exp6_role:"DJ",exp6_desc:"Entertainment programming at a 5-star international resort, live performances and event coordination.",
+    exp7_role:"Land Sport / DJ Assistant",exp7_desc:"Guest animation programs, sports event coordination, and DJ assistant duties.",
+    exp8_role:"Ticket Control",exp8_desc:"Ticketing control and access management system operations.",
+    exp9_role:"Supervisor – Spectator Service",exp9_desc:"Leading spectator services team at the 4th Islamic Solidarity Games, coordinating procedures and guest flow.",
+    sec_skills_label:"Skills",sec_skills_title:"Professional",sec_skills_title2:"Skills",
+    sk1:"Project Management",sk2:"Event Coordination",sk3:"Machine Learning",sk4:"Data Visualization",sk5:"Accounting & Finance",
+    soft1:"Leadership",soft2:"Creativity",soft3:"Analytical Thinking",soft4:"Teamwork",soft5:"Stress Resilience",soft6:"Communication",soft7:"Multitasking",
+    sec_edu_label:"Education",sec_edu_title:"Academic",sec_edu_title2:"Background",
+    edu1_school:"Baku Business University",edu1_deg:"Bachelor of Information Technology",
+    edu2_school:"Baku Management and Technology College",edu2_deg:"Sub-Bachelor of Information Technology",
+    now:"Present",lang_label:"Languages",lang_az:"Azerbaijani",lang_en:"English",lang_ru:"Russian",native:"Native",
+    military_title:"Military Service",military_val:"Completed (2021–2023)",
+    sec_contact_label:"Contact",sec_contact_title:"Let's",sec_contact_title2:"Connect",c_phone:"Phone",c_loc:"Location",
+    cta_title:"Let's work together",cta_desc:"Available for new projects. Open to collaboration in large-scale events, event coordination, and project management.",cta_btn:"Send a message",
+    sec_cert_label:"Certificates",sec_cert_title:"Certificates",sec_cert_title2:"& Awards",
+    cert_total:"Certificates",cert_orgs:"Organizations",cert_years:"Years",
+    cf_all:"All",cf_hr:"HackerRank",cf_sport:"Sports",cf_vol:"Volunteering",cf_train:"Training",cf_award:"Awards",
+    ct_vol:"Volunteer Certificate",ct_app:"Certificate of Appreciation",ct_cert:"Certificate",ct_dip:"Diploma",ct_thank:"Certificate of Thanks",
+    hr1_desc:"Passed the HackerRank skill certification test",hr2_desc:"Passed the HackerRank skill certification test",
+    hr3_desc:"Passed the HackerRank skill certification test",hr4_desc:"Passed the HackerRank skill certification test",
+    hr5_desc:"Passed the HackerRank skill certification test",hr6_desc:"Passed the HackerRank skill certification test",
+    cert1_desc:"Volunteer support to Azerbaijan-Croatia UEFA EURO 2016 Qualifying Round match",
+    cert2_desc:"Volunteer support to Azerbaijan-Italy UEFA EURO 2016 Qualifying Round match",
+    cert3_desc:"Volunteer support to Azerbaijan-Italy UEFA EURO 2016 Qualifying Round match (2nd)",
+    cert4_desc:"Valuable contribution to the 42nd Baku World Chess Olympiad",
+    cert5_desc:"3rd place in the Focus on Solidarity contest within the 4th Islamic Solidarity Games",
+    cert6_desc:"UEFA U-17 Championship Azerbaijan 2016 – Volunteer (IT Department)",
+    cert7_desc:"Participation in Correct Use of Social Networks project – Azerbaijan Youth Foundation",
+    cert8_desc:"Contribution to the success of the 1st Red Bull Soapbox Race Baku 2016",
+    cert9_desc:"Completion of all Flamekeeper training requirements for the 1st European Games – Baku 2015",
+    cert10_desc:"Performance of Flamekeeper duties at the 1st European Games – Baku 2015",
+    cert11_desc:"Startup School Karabakh training and mentoring program participation",
+    cert12_desc:"4th Islamic Solidarity Games volunteer development program – Body Language",
+    cert13_desc:"4th Islamic Solidarity Games volunteer development program – Successful Career",
+    cert14_desc:"4th Islamic Solidarity Games volunteer development program – Discover Yourself",
+    cert15_desc:"Participation in Youth Tourism Forum within Baku 2015 – 1st European Games",
+    cert16_desc:"3rd place at Youth Day Winter Cup basketball tournament – Jalilabad",
+    cert17_desc:"Cold Hands, Warm Heart Angels charity fair – Team Leader and Organizer",
+    cert18_desc:"Active participation in 2016 Formula 1 Grand Prix of Europe preparation",
+    cert19_desc:"Volunteer certificate for 2016 Formula 1 Grand Prix of Europe",
+    cert20_desc:"Formation of Youth Tourism Guides project – 4th Islamic Solidarity Games Baku 2017",
+    cert21_desc:"Web Systems (81), MS Office Suite (99), Computer Graphics (99) – IT course completion"
+  },
+  ru: {
+    nav_exp:"Опыт",nav_skills:"Навыки",nav_edu:"Образование",nav_certs:"Сертификаты",nav_contact:"Контакт",
+    hero_eyebrow:"Event-менеджер · Координатор проектов",hero_title:"Event Project Manager | Баку, Азербайджан",
+    hero_desc:"Опытный специалист в организации и управлении масштабными мероприятиями. Более 8 лет работы в различных секторах.",
+    hero_cta1:"Связаться",hero_cta2:"Просмотреть опыт",stat1:"Лет Опыта",stat2:"Завершённых Проектов",
+    contact_label:"Контакты",photo_badge:"Event-менеджер",
+    sec_exp_label:"Опыт работы",sec_exp_title:"Карьерный",sec_exp_title2:"Путь",
+    exp1_role:"Координатор билетной службы",exp1_desc:"Координация всех операций с билетами на Играх СНГ 2025, управление системами контроля доступа и руководство командой.",
+    exp2_role:"Event Project Manager",exp2_desc:"Полное управление мероприятиями от концепции до реализации. Бюджетное планирование, работа с подрядчиками, координация команды.",
+    exp3_role:"Специалист по производственному учёту",exp3_desc:"Финансовый учёт производственных процессов, подготовка отчётов и поддержка внутреннего аудита.",
+    exp4_role:"Бухгалтер",exp4_desc:"Ведение бухгалтерского учёта, подготовка финансовой отчётности, обработка налоговых деклараций.",
+    exp5_role:"Младший бухгалтер",exp5_desc:"Поддержка бухгалтерской группы, документооборот, платёжные поручения и управление счетами.",
+    exp6_role:"DJ",exp6_desc:"Развлекательные программы в 5-звёздочном международном курорте, живые выступления и координация мероприятий.",
+    exp7_role:"Аниматор / Ассистент DJ",exp7_desc:"Участие в анимационных программах для гостей, координация спортивных мероприятий.",
+    exp8_role:"Контроль билетов",exp8_desc:"Оперативный контроль билетов и управление системой доступа.",
+    exp9_role:"Супервайзер – Служба зрителей",exp9_desc:"Руководство командой службы зрителей на 4-х Играх исламской солидарности.",
+    sec_skills_label:"Навыки",sec_skills_title:"Профессиональные",sec_skills_title2:"Навыки",
+    sk1:"Управление проектами",sk2:"Координация мероприятий",sk3:"Машинное обучение",sk4:"Визуализация данных",sk5:"Бухгалтерия и финансы",
+    soft1:"Лидерство",soft2:"Креативность",soft3:"Аналитическое мышление",soft4:"Командная работа",soft5:"Стрессоустойчивость",soft6:"Коммуникация",soft7:"Многозадачность",
+    sec_edu_label:"Образование",sec_edu_title:"Академический",sec_edu_title2:"Путь",
+    edu1_school:"Бакинский Бизнес Университет",edu1_deg:"Бакалавр – Информационные технологии",
+    edu2_school:"Бакинский Колледж Менеджмента и Технологий",edu2_deg:"Суббакалавр – Информационные технологии",
+    now:"Настоящее",lang_label:"Языки",lang_az:"Азербайджанский",lang_en:"Английский",lang_ru:"Русский",native:"Родной",
+    military_title:"Военная служба",military_val:"Завершена (2021–2023)",
+    sec_contact_label:"Контакт",sec_contact_title:"Давайте",sec_contact_title2:"Свяжемся",c_phone:"Телефон",c_loc:"Местоположение",
+    cta_title:"Давайте работать вместе",cta_desc:"Готов к новым проектам. Открыт к сотрудничеству в сфере масштабных мероприятий и управления проектами.",cta_btn:"Написать письмо",
+    sec_cert_label:"Сертификаты",sec_cert_title:"Сертификаты",sec_cert_title2:"и Награды",
+    cert_total:"Сертификатов",cert_orgs:"Организаций",cert_years:"Лет",
+    cf_all:"Все",cf_hr:"HackerRank",cf_sport:"Спорт",cf_vol:"Волонтёрство",cf_train:"Обучение",cf_award:"Награды",
+    ct_vol:"Волонтёрский сертификат",ct_app:"Благодарственный сертификат",ct_cert:"Сертификат",ct_dip:"Диплом",ct_thank:"Благодарность",
+    hr1_desc:"Успешно прошёл тест сертификации навыков HackerRank",hr2_desc:"Успешно прошёл тест сертификации навыков HackerRank",
+    hr3_desc:"Успешно прошёл тест сертификации навыков HackerRank",hr4_desc:"Успешно прошёл тест сертификации навыков HackerRank",
+    hr5_desc:"Успешно прошёл тест сертификации навыков HackerRank",hr6_desc:"Успешно прошёл тест сертификации навыков HackerRank",
+    cert1_desc:"Волонтёрская поддержка матча Азербайджан–Хорватия квалификации UEFA EURO 2016",
+    cert2_desc:"Волонтёрская поддержка матча Азербайджан–Италия квалификации UEFA EURO 2016",
+    cert3_desc:"Волонтёрская поддержка матча Азербайджан–Италия квалификации UEFA EURO 2016 (2-й)",
+    cert4_desc:"Ценный вклад в проведение 42-й Всемирной шахматной олимпиады в Баку",
+    cert5_desc:"3-е место в конкурсе Focus on Solidarity в рамках 4-х Игр исламской солидарности",
+    cert6_desc:"Чемпионат UEFA U-17 Азербайджан 2016 – волонтёр IT-отдела",
+    cert7_desc:"Участие в проекте Правильное использование социальных сетей",
+    cert8_desc:"За вклад в успех 1-й гонки Red Bull Soapbox Race Баку 2016",
+    cert9_desc:"Завершение обучения Flamekeeper на 1-х Европейских играх – Баку 2015",
+    cert10_desc:"Исполнение обязанностей Flamekeeper на 1-х Европейских играх – Баку 2015",
+    cert11_desc:"Участие в учебной и менторской программе Startup School Карабах",
+    cert12_desc:"Программа развития волонтёров 4-х Игр ИС – Язык тела",
+    cert13_desc:"Программа развития волонтёров 4-х Игр ИС – Успешная карьера",
+    cert14_desc:"Программа развития волонтёров 4-х Игр ИС – Познай себя",
+    cert15_desc:"Участие в Молодёжном туристическом форуме в рамках Баку 2015",
+    cert16_desc:"3-е место в баскетбольном турнире Зимний кубок в День молодёжи – Джалилабад",
+    cert17_desc:"Благотворительная ярмарка Холодные руки, тёплое сердце – Ангелы – руководитель команды",
+    cert18_desc:"Активное участие в период подготовки к Formula 1 Grand Prix of Europe 2016",
+    cert19_desc:"Волонтёрский сертификат Formula 1 Grand Prix of Europe 2016",
+    cert20_desc:"Проект Формирование молодёжных туристических гидов – 4-е Игры ИС Баку 2017",
+    cert21_desc:"Веб-системы (81), MS Office Suite (99), Компьютерная графика (99) – IT курс"
+  }
 };
-let currentLang='az';
-function setLang(lang){
-  currentLang=lang;
-  const data=i18n[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(data[k])el.textContent=data[k];});
-  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-  document.documentElement.lang=lang;
+
+let currentLang = 'az';
+
+function setLang(lang) {
+  currentLang = lang;
+  const data = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (data[k]) el.textContent = data[k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
+  if (activeBtn) activeBtn.classList.add('active');
+  document.documentElement.lang = lang;
 }
-const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');entry.target.querySelectorAll('.skill-bar').forEach(bar=>{bar.style.width=bar.dataset.pct+'%';});}});},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-window.addEventListener('load',()=>{document.querySelectorAll('.skill-bar').forEach(bar=>{const card=bar.closest('.skill-card');const rect=card.getBoundingClientRect();if(rect.top<window.innerHeight){bar.style.width=bar.dataset.pct+'%';}});});
+
+function filterCerts(cat) {
+  document.querySelectorAll('.cert-filter-btn').forEach(b => b.classList.remove('active'));
+  const clickedBtn = document.querySelector(`.cert-filter-btn[data-cat="${cat}"]`);
+  if (clickedBtn) clickedBtn.classList.add('active');
+  document.querySelectorAll('.cert-card').forEach(card => {
+    const cats = card.getAttribute('data-cat') || '';
+    card.style.display = (cat === 'all' || cats.split(' ').includes(cat)) ? '' : 'none';
+  });
+}
+
+// Update filter buttons to use data-cat onclick
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.cert-filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterCerts(this.getAttribute('data-cat'));
+    });
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Animate skill bars
+      entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-pct') + '%';
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Also trigger skill bars for any already visible
+document.querySelectorAll('.skill-bar').forEach(bar => {
+  const pct = bar.getAttribute('data-pct');
+  if (pct) {
+    setTimeout(() => { bar.style.width = pct + '%'; }, 500);
+  }
+});
 </script>
 </body>
 </html>
