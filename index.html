@@ -223,6 +223,11 @@
     .btn-primary:hover { box-shadow: 0 26px 70px rgba(217,180,87,.34); }
     .btn-ghost { border-color: var(--line); background: rgba(255,255,255,.055); color: var(--text); }
     .btn-ghost:hover { border-color: var(--line-strong); background: rgba(217,180,87,.1); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #ffffff; box-shadow: 0 20px 60px rgba(37,211,102,.18); }
+    .btn-whatsapp:hover { box-shadow: 0 26px 70px rgba(37,211,102,.28); }
+    .icon-svg { width: 18px; height: 18px; display: block; flex: none; }
+    .btn .icon-svg { width: 17px; height: 17px; }
+    .whatsapp-icon { background: rgba(37,211,102,.12); color: #25D366; }
 
     .hero-panel { position: relative; }
     .portrait-card {
@@ -356,6 +361,9 @@
     .contact-list { display:grid; gap: 12px; }
     .contact-row { display:flex; gap: 14px; align-items:center; padding: 16px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
     .contact-icon { width: 42px; height: 42px; border-radius: 14px; display:grid; place-items:center; background: rgba(217,180,87,.12); color: var(--gold-2); flex: none; }
+    .contact-icon .icon-svg { width: 20px; height: 20px; }
+    .linkedin-icon { background: rgba(10,102,194,.14); color: #0A66C2; }
+    .facebook-icon { background: rgba(24,119,242,.14); color: #1877f2; }
     .contact-row small { display:block; color: var(--dim); font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
     .contact-row strong { font-size: 15px; word-break: break-word; }
     .cta-card { min-height: 100%; display:flex; flex-direction:column; justify-content:space-between; padding: 34px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: radial-gradient(circle at 0 0, rgba(217,180,87,.18), transparent 34rem), linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.035)); box-shadow: var(--shadow); }
@@ -364,7 +372,8 @@
 
     .footer-main { padding: 30px 0 44px; border-top: 1px solid var(--line); color: var(--dim); }
     .footer-inner { display:flex; justify-content:space-between; align-items:center; gap: 18px; }
-    .footer-links { display:flex; gap: 14px; font-weight: 800; }
+    .footer-links { display:flex; gap: 14px; font-weight: 800; flex-wrap: wrap; }
+    .footer-links a { display:inline-flex; align-items:center; gap: 8px; }
     .footer-links a:hover { color: var(--gold-2); }
 
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
@@ -907,9 +916,11 @@
           <p class="section-kicker" data-i18n="sec_contact_label">Əlaqə</p>
           <div class="contact-list">
             <a class="contact-row" href="tel:+994556760115"><span class="contact-icon">☎</span><span><small data-i18n="c_phone">Telefon</small><strong>+994 55 676 01 15</strong></span></a>
-            <a class="contact-row" href="mailto:rasimabdullayev6@gmail.com"><span class="contact-icon">✉</span><span><small>Email</small><strong>rasimabdullayev6@gmail.com</strong></span></a>
-            <a class="contact-row" href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer"><span class="contact-icon">in</span><span><small>LinkedIn</small><strong>linkedin.com/in/rasimabdullayev1997</strong></span></a>
-            <div class="contact-row"><span class="contact-icon">⌖</span><span><small data-i18n="c_loc">Məkan</small><strong>Bakı, Azərbaycan</strong></span></div>
+            <a class="contact-row" href="https://wa.me/994556760115?text=Salam%20Rasim%20b%C9%99y%2C%20CV-nizi%20g%C3%B6rd%C3%BCm%20v%C9%99%20sizinl%C9%99%20%C9%99laq%C9%99%20saxlamaq%20ist%C9%99yir%C9%99m." target="_blank" rel="noreferrer"><span class="contact-icon whatsapp-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.33.16 11.9c0 2.1.55 4.14 1.6 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.17-3.46-8.42ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.02-1.38l-.36-.21-3.76.99 1-3.67-.23-.38a9.9 9.9 0 1 1 8.38 4.65Zm5.43-7.41c-.3-.15-1.77-.88-2.04-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.35.23-.65.08-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.11 3.23 5.1 4.53.71.31 1.26.49 1.7.63.71.22 1.35.19 1.86.12.57-.08 1.77-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35Z"/></svg></span><span><small>WhatsApp</small><strong data-i18n="whatsapp_direct">Birbaşa WhatsApp-dan yaz</strong></span></a>
+            <a class="contact-row" href="mailto:rasimabdullayev6@gmail.com"><span class="contact-icon">✉</span><span><small data-i18n="email_label">E-poçt</small><strong>rasimabdullayev6@gmail.com</strong></span></a>
+            <a class="contact-row" href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer"><span class="contact-icon linkedin-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.11 2.06 2.06 0 0 1 0 4.11ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"/></svg></span><span><small>LinkedIn</small><strong>linkedin.com/in/rasimabdullayev1997</strong></span></a>
+            <a class="contact-row" href="https://www.facebook.com/rasimabdullayevofficial" target="_blank" rel="noreferrer"><span class="contact-icon facebook-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.54-4.7 1.32 0 2.69.24 2.69.24v2.97h-1.52c-1.5 0-1.97.94-1.97 1.9v2.28h3.35l-.54 3.49h-2.81V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></span><span><small>Facebook</small><strong>facebook.com/rasimabdullayevofficial</strong></span></a>
+            <div class="contact-row"><span class="contact-icon">⌖</span><span><small data-i18n="c_loc">Məkan</small><strong data-i18n="loc_value">Bakı, Azərbaycan</strong></span></div>
           </div>
         </div>
         <div class="cta-card reveal">
@@ -917,7 +928,7 @@
             <h2 data-i18n="cta_title">Birlikdə işləyək</h2>
             <p data-i18n="cta_desc">Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.</p>
           </div>
-          <div class="cta-row"><a class="btn btn-primary" href="mailto:rasimabdullayev6@gmail.com" data-i18n="cta_btn">Məktub göndər</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+          <div class="cta-row"><a class="btn btn-primary" href="mailto:rasimabdullayev6@gmail.com" data-i18n="cta_btn">Məktub göndər</a><a class="btn btn-whatsapp" href="https://wa.me/994556760115?text=Salam%20Rasim%20b%C9%99y%2C%20CV-nizi%20g%C3%B6rd%C3%BCm%20v%C9%99%20sizinl%C9%99%20%C9%99laq%C9%99%20saxlamaq%20ist%C9%99yir%C9%99m." target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.33.16 11.9c0 2.1.55 4.14 1.6 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.17-3.46-8.42ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.02-1.38l-.36-.21-3.76.99 1-3.67-.23-.38a9.9 9.9 0 1 1 8.38 4.65Zm5.43-7.41c-.3-.15-1.77-.88-2.04-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.35.23-.65.08-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.11 3.23 5.1 4.53.71.31 1.26.49 1.7.63.71.22 1.35.19 1.86.12.57-.08 1.77-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>WhatsApp</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.11 2.06 2.06 0 0 1 0 4.11ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"/></svg>LinkedIn</a><a class="btn btn-ghost" href="https://www.facebook.com/rasimabdullayevofficial" target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.54-4.7 1.32 0 2.69.24 2.69.24v2.97h-1.52c-1.5 0-1.97.94-1.97 1.9v2.28h3.35l-.54 3.49h-2.81V24C19.61 23.1 24 18.1 24 12.07Z"/></svg>Facebook</a></div>
         </div>
       </div>
     </section>
@@ -925,121 +936,983 @@
 
   <footer class="footer-main">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Rasim Abdullayev. All rights reserved.</span>
-      <div class="footer-links"><a href="#home">Top</a><a href="mailto:rasimabdullayev6@gmail.com">Email</a><a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+      <span>© <span id="year"></span> Rasim Abdullayev. <span data-i18n="footer_rights">Bütün hüquqlar qorunur.</span></span>
+      <div class="footer-links"><a href="#home" data-i18n="footer_top">Yuxarı</a><a href="mailto:rasimabdullayev6@gmail.com" data-i18n="email_label">E-poçt</a><a href="https://wa.me/994556760115?text=Salam%20Rasim%20b%C9%99y%2C%20CV-nizi%20g%C3%B6rd%C3%BCm%20v%C9%99%20sizinl%C9%99%20%C9%99laq%C9%99%20saxlamaq%20ist%C9%99yir%C9%99m." target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.33.16 11.9c0 2.1.55 4.14 1.6 5.94L0 24l6.34-1.66a11.86 11.86 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.17-3.46-8.42ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.02-1.38l-.36-.21-3.76.99 1-3.67-.23-.38a9.9 9.9 0 1 1 8.38 4.65Zm5.43-7.41c-.3-.15-1.77-.88-2.04-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.35.23-.65.08-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.11 3.23 5.1 4.53.71.31 1.26.49 1.7.63.71.22 1.35.19 1.86.12.57-.08 1.77-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35Z"/></svg><span>WhatsApp</span></a><a href="https://www.linkedin.com/in/rasimabdullayev1997/" target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.11 2.06 2.06 0 0 1 0 4.11ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"/></svg><span>LinkedIn</span></a><a href="https://www.facebook.com/rasimabdullayevofficial" target="_blank" rel="noreferrer"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.54-4.7 1.32 0 2.69.24 2.69.24v2.97h-1.52c-1.5 0-1.97.94-1.97 1.9v2.28h3.35l-.54 3.49h-2.81V24C19.61 23.1 24 18.1 24 12.07Z"/></svg><span>Facebook</span></a></div>
     </div>
   </footer>
 
   <script>
     const profile = {
-      experiences: [
-        { company: "İnformasiya Kommunikasiya Texnologiyaları Agentliyi — İTD", period: "01.04.2026 — Hazırda", role: {az:"Təcrübəçi — Analitik Təhlil və Məlumatların Emalı Şöbəsi", en:"Intern — Analytics and Data Processing Unit", ru:"Стажер — Отдел аналитического анализа и обработки данных"}, desc: {az:"Universitet tərəfindən yönləndirilmiş təcrübə proqramı çərçivəsində Analitik Təhlil və Məlumatların Emalı şöbəsində təcrübə keçirir. Məlumatların emalı, analitik yanaşma, hesabat dəstəyi və təşkilati iş prosesləri üzrə praktiki biliklər əldə edir.", en:"Participating in a university-assigned internship program at the Analytics and Data Processing Unit. Gaining practical experience in data processing, analytical workflows, reporting support and organizational processes.", ru:"Проходит стажировку по направлению университета в отделе аналитического анализа и обработки данных. Получает практический опыт в обработке данных, аналитических рабочих процессах, поддержке отчетности и организационных процессах."} },
-        { company: "İ TİCKET — CIS Games 2025", period: "09.2025 — 10.2025", role: {az:"Venue Ticketing Coordinator", en:"Venue Ticketing Coordinator", ru:"Координатор билетных операций"}, desc: {az:"CİS Oyunları 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş nəzarəti sistemlərinin idarə edilməsi və komanda rəhbərliyi.", en:"Coordinated ticketing operations for CIS Games 2025, managed access control systems and led on-site team operations.", ru:"Координация билетных операций CIS Games 2025, управление системами доступа и работа с командой на площадке."} },
-        { company: "LEDAZ — Innovation Event LLC", period: "09.2024 — 07.2025", role: {az:"Event Project Manager", en:"Event Project Manager", ru:"Менеджер event-проектов"}, desc: {az:"Tədbirlərin konsepsiyadan icraya qədər tam idarə edilməsi: büdcə planlaması, vendor münasibətləri, logistika və komanda koordinasiyası.", en:"End-to-end management of events: budget planning, vendor relations, logistics and team coordination.", ru:"Полное управление мероприятиями: бюджет, подрядчики, логистика и координация команды."} },
-        { company: "Veyseloglu Group — Araz LLC", period: "09.2023 — 08.2024", role: {az:"Production Accounting Specialist", en:"Production Accounting Specialist", ru:"Специалист производственного учета"}, desc: {az:"İstehsalat proseslərinin maliyyə uçotu, hesabatların hazırlanması və daxili audit dəstəyi.", en:"Financial accounting for production processes, report preparation and internal audit support.", ru:"Финансовый учет производственных процессов, подготовка отчетов и поддержка внутреннего аудита."} },
-        { company: "Veyseloglu Group — Khoncha LLC", period: "03.2023 — 09.2023", role: {az:"Accounting Specialist", en:"Accounting Specialist", ru:"Специалист по бухгалтерии"}, desc: {az:"Mühasibat uçotu, maliyyə hesabatları və vergi bəyannamələrinin hazırlanması.", en:"Bookkeeping, financial statements and tax declaration preparation.", ru:"Бухгалтерский учет, финансовая отчетность и налоговые декларации."} },
-        { company: "Veyseloglu Group — Khoncha LLC", period: "06.2020 — 06.2021", role: {az:"Junior Accounting Specialist", en:"Junior Accounting Specialist", ru:"Младший бухгалтер"}, desc: {az:"Sənəd dövriyyəsi, ödəmə əmrləri, hesab-faktura idarəetməsi və mühasibat komandasına dəstək.", en:"Document workflow, payment orders, invoice management and accounting team support.", ru:"Документооборот, платежные поручения, счета-фактуры и поддержка бухгалтерии."} },
-        { company: "Azur Resort & Spa — Antalya", period: "05.2019 — 03.2020", role: {az:"DJ", en:"DJ", ru:"DJ"}, desc: {az:"5 ulduzlu beynəlxalq oteldə əyləncə proqramları, canlı performanslar və tədbir koordinasiyası.", en:"Entertainment programming, live performances and event coordination at a 5-star international resort.", ru:"Развлекательные программы, живые выступления и координация мероприятий в 5-звездочном отеле."} },
-        { company: "Throne Beach Resort & Spa — Antalya", period: "04.2018 — 11.2018", role: {az:"Land Sport / DJ Assistant", en:"Land Sport / DJ Assistant", ru:"Ассистент DJ / спортивная анимация"}, desc: {az:"Qonaq animasiya proqramları, idman tədbirlərinin koordinasiyası və DJ assistentliyi.", en:"Guest animation programs, sports event coordination and DJ assistant duties.", ru:"Анимационные программы, спортивные мероприятия и помощь DJ."} },
-        { company: "İ TİCKET — BCC 2019", period: "2019", role: {az:"Ticket Control", en:"Ticket Control", ru:"Контроль билетов"}, desc: {az:"Bilet nəzarəti və giriş idarəetməsi sistemlərinin operativ icrası.", en:"Operational execution of ticket control and access management systems.", ru:"Оперативный контроль билетов и управление входом."} },
-        { company: "4th Islamic Solidarity Games", period: "04.2017 — 07.2017", role: {az:"Supervisor — Spectator Service", en:"Supervisor — Spectator Service", ru:"Супервайзер зрительского сервиса"}, desc: {az:"Tamaşaçı xidmətləri qrupuna rəhbərlik, prosedurların koordinasiyası və qonaq axınının idarə edilməsi.", en:"Led spectator services team, coordinated procedures and managed guest flow.", ru:"Руководство командой зрительского сервиса, координация процедур и потока гостей."} }
+      "experiences": [
+            {
+                  "company": {
+                        "az": "İnformasiya Kommunikasiya Texnologiyaları Agentliyi — İTD",
+                        "en": "Information and Communication Technologies Agency — ITD",
+                        "ru": "Агентство информационно-коммуникационных технологий — ITD"
+                  },
+                  "period": {
+                        "az": "01.04.2026 — Hazırda",
+                        "en": "01 Apr 2026 — Present",
+                        "ru": "01.04.2026 — по настоящее время"
+                  },
+                  "role": {
+                        "az": "Təcrübəçi — Analitik Təhlil və Məlumatların Emalı Şöbəsi",
+                        "en": "Intern — Analytics and Data Processing Unit",
+                        "ru": "Стажер — отдел аналитического анализа и обработки данных"
+                  },
+                  "desc": {
+                        "az": "Universitet tərəfindən yönləndirilmiş təcrübə proqramı çərçivəsində Analitik Təhlil və Məlumatların Emalı şöbəsində təcrübə keçir. Məlumatların emalı, analitik yanaşma, hesabat dəstəyi və təşkilati iş prosesləri üzrə praktik biliklər əldə edir.",
+                        "en": "Participating in a university-assigned internship program at the Analytics and Data Processing Unit. Gaining practical experience in data processing, analytical workflows, reporting support and organizational processes.",
+                        "ru": "Проходит стажировку по направлению университета в отделе аналитического анализа и обработки данных. Получает практический опыт в обработке данных, аналитических рабочих процессах, поддержке отчетности и организационных процессах."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "İ TİCKET — CIS Games 2025",
+                        "en": "İ TİCKET — CIS Games 2025",
+                        "ru": "İ TİCKET — Игры СНГ 2025"
+                  },
+                  "period": {
+                        "az": "09.2025 — 10.2025",
+                        "en": "Sep 2025 — Oct 2025",
+                        "ru": "09.2025 — 10.2025"
+                  },
+                  "role": {
+                        "az": "Məkan üzrə bilet əməliyyatları koordinatoru",
+                        "en": "Venue Ticketing Coordinator",
+                        "ru": "Координатор билетных операций на площадке"
+                  },
+                  "desc": {
+                        "az": "CIS Games 2025 çərçivəsində bilet əməliyyatlarının koordinasiyası, giriş-nəzarət sistemlərinin idarə edilməsi və sahə komandasına rəhbərlik.",
+                        "en": "Coordinated ticketing operations for CIS Games 2025, managed access control systems and led on-site team operations.",
+                        "ru": "Координировал билетные операции на Играх СНГ 2025, управлял системами контроля доступа и работой команды на площадке."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "LEDAZ — Innovation Event MMC",
+                        "en": "LEDAZ — Innovation Event LLC",
+                        "ru": "LEDAZ — Innovation Event LLC"
+                  },
+                  "period": {
+                        "az": "09.2024 — 07.2025",
+                        "en": "Sep 2024 — Jul 2025",
+                        "ru": "09.2024 — 07.2025"
+                  },
+                  "role": {
+                        "az": "Tədbir layihə meneceri",
+                        "en": "Event Project Manager",
+                        "ru": "Менеджер event-проектов"
+                  },
+                  "desc": {
+                        "az": "Tədbirlərin konsepsiyadan icraya qədər tam idarə olunması: büdcə planlaması, təchizatçı münasibətləri, logistika və komanda koordinasiyası.",
+                        "en": "End-to-end management of events: budget planning, vendor relations, logistics and team coordination.",
+                        "ru": "Полное управление мероприятиями от концепции до реализации: бюджет, подрядчики, логистика и координация команды."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "Veysəloğlu Group — Araz MMC",
+                        "en": "Veyseloglu Group — Araz LLC",
+                        "ru": "Veyseloglu Group — Araz LLC"
+                  },
+                  "period": {
+                        "az": "09.2023 — 08.2024",
+                        "en": "Sep 2023 — Aug 2024",
+                        "ru": "09.2023 — 08.2024"
+                  },
+                  "role": {
+                        "az": "İstehsalat uçotu üzrə mütəxəssis",
+                        "en": "Production Accounting Specialist",
+                        "ru": "Специалист по производственному учету"
+                  },
+                  "desc": {
+                        "az": "İstehsalat proseslərinin maliyyə uçotu, hesabatların hazırlanması və daxili audit proseslərinə dəstək.",
+                        "en": "Financial accounting for production processes, report preparation and internal audit support.",
+                        "ru": "Финансовый учет производственных процессов, подготовка отчетов и поддержка внутреннего аудита."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "Veysəloğlu Group — Khoncha MMC",
+                        "en": "Veyseloglu Group — Khoncha LLC",
+                        "ru": "Veyseloglu Group — Khoncha LLC"
+                  },
+                  "period": {
+                        "az": "03.2023 — 09.2023",
+                        "en": "Mar 2023 — Sep 2023",
+                        "ru": "03.2023 — 09.2023"
+                  },
+                  "role": {
+                        "az": "Mühasibat uçotu üzrə mütəxəssis",
+                        "en": "Accounting Specialist",
+                        "ru": "Специалист по бухгалтерскому учету"
+                  },
+                  "desc": {
+                        "az": "Mühasibat uçotu, maliyyə hesabatlarının və vergi bəyannamələrinin hazırlanması.",
+                        "en": "Bookkeeping, financial statements and tax declaration preparation.",
+                        "ru": "Бухгалтерский учет, финансовая отчетность и подготовка налоговых деклараций."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "Veysəloğlu Group — Khoncha MMC",
+                        "en": "Veyseloglu Group — Khoncha LLC",
+                        "ru": "Veyseloglu Group — Khoncha LLC"
+                  },
+                  "period": {
+                        "az": "06.2020 — 06.2021",
+                        "en": "Jun 2020 — Jun 2021",
+                        "ru": "06.2020 — 06.2021"
+                  },
+                  "role": {
+                        "az": "Kiçik mühasibat uçotu mütəxəssisi",
+                        "en": "Junior Accounting Specialist",
+                        "ru": "Младший бухгалтер"
+                  },
+                  "desc": {
+                        "az": "Sənəd dövriyyəsi, ödəniş tapşırıqları, hesab-fakturaların idarə edilməsi və mühasibat komandasına əməli dəstək.",
+                        "en": "Document workflow, payment orders, invoice management and accounting team support.",
+                        "ru": "Документооборот, платежные поручения, управление счетами-фактурами и поддержка бухгалтерской команды."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "Azur Resort & Spa — Antalya",
+                        "en": "Azur Resort & Spa — Antalya",
+                        "ru": "Azur Resort & Spa — Анталья"
+                  },
+                  "period": {
+                        "az": "05.2019 — 03.2020",
+                        "en": "May 2019 — Mar 2020",
+                        "ru": "05.2019 — 03.2020"
+                  },
+                  "role": {
+                        "az": "DJ",
+                        "en": "DJ",
+                        "ru": "DJ"
+                  },
+                  "desc": {
+                        "az": "5 ulduzlu beynəlxalq oteldə əyləncə proqramlarının təşkili, canlı çıxışlar və tədbir koordinasiyası.",
+                        "en": "Entertainment programming, live performances and event coordination at a 5-star international resort.",
+                        "ru": "Развлекательные программы, живые выступления и координация мероприятий в 5-звездочном международном отеле."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "Throne Beach Resort & Spa — Antalya",
+                        "en": "Throne Beach Resort & Spa — Antalya",
+                        "ru": "Throne Beach Resort & Spa — Анталья"
+                  },
+                  "period": {
+                        "az": "04.2018 — 11.2018",
+                        "en": "Apr 2018 — Nov 2018",
+                        "ru": "04.2018 — 11.2018"
+                  },
+                  "role": {
+                        "az": "İdman animasiyası və DJ assistenti",
+                        "en": "Land Sport / DJ Assistant",
+                        "ru": "Ассистент DJ / спортивная анимация"
+                  },
+                  "desc": {
+                        "az": "Qonaqlar üçün animasiya proqramları, idman tədbirlərinin koordinasiyası və DJ fəaliyyətinə dəstək.",
+                        "en": "Guest animation programs, sports event coordination and DJ assistant duties.",
+                        "ru": "Анимационные программы для гостей, координация спортивных мероприятий и помощь DJ."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "İ TİCKET — BCC 2019",
+                        "en": "İ TİCKET — BCC 2019",
+                        "ru": "İ TİCKET — BCC 2019"
+                  },
+                  "period": {
+                        "az": "2019",
+                        "en": "2019",
+                        "ru": "2019"
+                  },
+                  "role": {
+                        "az": "Bilet nəzarəti üzrə əməkdaş",
+                        "en": "Ticket Control Officer",
+                        "ru": "Сотрудник билетного контроля"
+                  },
+                  "desc": {
+                        "az": "Bilet yoxlanışı və giriş idarəetmə sistemlərinin operativ şəkildə icrası.",
+                        "en": "Operational execution of ticket control and access management systems.",
+                        "ru": "Оперативный контроль билетов и управление входными системами."
+                  }
+            },
+            {
+                  "company": {
+                        "az": "4-cü İslam Həmrəyliyi Oyunları",
+                        "en": "4th Islamic Solidarity Games",
+                        "ru": "4-е Игры исламской солидарности"
+                  },
+                  "period": {
+                        "az": "04.2017 — 07.2017",
+                        "en": "Apr 2017 — Jul 2017",
+                        "ru": "04.2017 — 07.2017"
+                  },
+                  "role": {
+                        "az": "Tamaşaçı xidməti üzrə supervayzer",
+                        "en": "Supervisor — Spectator Service",
+                        "ru": "Супервайзер зрительского сервиса"
+                  },
+                  "desc": {
+                        "az": "Tamaşaçı xidmətləri komandasına rəhbərlik, prosedurların koordinasiyası və qonaq axınının idarə olunması.",
+                        "en": "Led spectator services team, coordinated procedures and managed guest flow.",
+                        "ru": "Руководство командой зрительского сервиса, координация процедур и управление потоком гостей."
+                  }
+            }
       ],
-      skills: [
-        ["Layihə İdarəetməsi", "Project Management", "Управление проектами", 95],
-        ["Tədbir Koordinasiyası", "Event Coordination", "Координация мероприятий", 92],
-        ["Maşın Öyrənməsi", "Machine Learning", "Машинное обучение", 93],
-        ["Məlumat Vizuallaşdırması", "Data Visualization", "Визуализация данных", 79],
-        ["Mühasibat & Maliyyə", "Accounting & Finance", "Бухгалтерия и финансы", 82],
-        ["MS Office Suite", "MS Office Suite", "MS Office Suite", 88]
+      "skills": [
+            [
+                  "Layihə idarəetməsi",
+                  "Project Management",
+                  "Управление проектами",
+                  95
+            ],
+            [
+                  "Tədbir koordinasiyası",
+                  "Event Coordination",
+                  "Координация мероприятий",
+                  92
+            ],
+            [
+                  "Maşın öyrənməsi",
+                  "Machine Learning",
+                  "Машинное обучение",
+                  93
+            ],
+            [
+                  "Məlumat vizuallaşdırması",
+                  "Data Visualization",
+                  "Визуализация данных",
+                  79
+            ],
+            [
+                  "Mühasibat və maliyyə",
+                  "Accounting & Finance",
+                  "Бухгалтерия и финансы",
+                  82
+            ],
+            [
+                  "MS Office paketi",
+                  "MS Office Suite",
+                  "MS Office Suite",
+                  88
+            ]
       ],
-      soft: {
-        az: ["Liderlik", "Yaradıcılıq", "Analitik düşüncə", "Komanda işi", "Stressə davamlılıq", "Ünsiyyət", "Çoxtapşırıqlılıq", "Vendor idarəçiliyi", "Sahə əməliyyatları"],
-        en: ["Leadership", "Creativity", "Analytical thinking", "Teamwork", "Stress resilience", "Communication", "Multitasking", "Vendor management", "On-site operations"],
-        ru: ["Лидерство", "Креативность", "Аналитика", "Командная работа", "Стрессоустойчивость", "Коммуникация", "Многозадачность", "Управление подрядчиками", "Полевые операции"]
+      "soft": {
+            "az": [
+                  "Liderlik",
+                  "Yaradıcılıq",
+                  "Analitik düşüncə",
+                  "Komanda işi",
+                  "Stressə davamlılıq",
+                  "Ünsiyyət",
+                  "Çoxtapşırıqlılıq",
+                  "Təchizatçıların idarə olunması",
+                  "Sahə əməliyyatları"
+            ],
+            "en": [
+                  "Leadership",
+                  "Creativity",
+                  "Analytical thinking",
+                  "Teamwork",
+                  "Stress resilience",
+                  "Communication",
+                  "Multitasking",
+                  "Vendor management",
+                  "On-site operations"
+            ],
+            "ru": [
+                  "Лидерство",
+                  "Креативность",
+                  "Аналитическое мышление",
+                  "Командная работа",
+                  "Стрессоустойчивость",
+                  "Коммуникация",
+                  "Многозадачность",
+                  "Управление подрядчиками",
+                  "Полевые операции"
+            ]
       },
-      education: [
-        { tag:"BBU", title:{az:"Bakı Biznes Universiteti", en:"Baku Business University", ru:"Бакинский Бизнес Университет"}, desc:{az:"Bakalavr — İnformasiya Texnologiyaları", en:"Bachelor — Information Technology", ru:"Бакалавр — Информационные технологии"}, period:"2020 — Present" },
-        { tag:"BİTK", title:{az:"Bakı İdarəetmə və Texnologiya Kolleci", en:"Baku Management and Technology College", ru:"Бакинский колледж управления и технологий"}, desc:{az:"Sub-Bakalavr — İnformasiya Texnologiyaları", en:"Sub-Bachelor — Information Technology", ru:"Суббакалавр — Информационные технологии"}, period:"2013 — 2017" },
-        { tag:"AZ", title:{az:"Azərbaycan dili", en:"Azerbaijani", ru:"Азербайджанский"}, desc:{az:"Ana dili", en:"Native", ru:"Родной"}, period:"Language" },
-        { tag:"EN/RU", title:{az:"İngilis və Rus dili", en:"English & Russian", ru:"Английский и русский"}, desc:{az:"B1 səviyyəsi", en:"B1 level", ru:"Уровень B1"}, period:"Languages" },
-        { tag:"MS", title:{az:"Hərbi xidmət", en:"Military Service", ru:"Военная служба"}, desc:{az:"Tamamlanıb", en:"Completed", ru:"Завершена"}, period:"2021 — 2023" }
+      "education": [
+            {
+                  "tag": "BBU",
+                  "title": {
+                        "az": "Bakı Biznes Universiteti",
+                        "en": "Baku Business University",
+                        "ru": "Бакинский бизнес-университет"
+                  },
+                  "desc": {
+                        "az": "Bakalavr — İnformasiya texnologiyaları",
+                        "en": "Bachelor’s degree — Information Technology",
+                        "ru": "Бакалавриат — информационные технологии"
+                  },
+                  "period": {
+                        "az": "2020 — Hazırda",
+                        "en": "2020 — Present",
+                        "ru": "2020 — по настоящее время"
+                  }
+            },
+            {
+                  "tag": "BİTK",
+                  "title": {
+                        "az": "Bakı İdarəetmə və Texnologiya Kolleci",
+                        "en": "Baku Management and Technology College",
+                        "ru": "Бакинский колледж управления и технологий"
+                  },
+                  "desc": {
+                        "az": "Subbakalavr — İnformasiya texnologiyaları",
+                        "en": "Associate-level degree — Information Technology",
+                        "ru": "Среднее специальное образование — информационные технологии"
+                  },
+                  "period": {
+                        "az": "2013 — 2017",
+                        "en": "2013 — 2017",
+                        "ru": "2013 — 2017"
+                  }
+            },
+            {
+                  "tag": "AZ",
+                  "title": {
+                        "az": "Azərbaycan dili",
+                        "en": "Azerbaijani language",
+                        "ru": "Азербайджанский язык"
+                  },
+                  "desc": {
+                        "az": "Ana dili",
+                        "en": "Native language",
+                        "ru": "Родной язык"
+                  },
+                  "period": {
+                        "az": "Dil",
+                        "en": "Language",
+                        "ru": "Язык"
+                  }
+            },
+            {
+                  "tag": "EN/RU",
+                  "title": {
+                        "az": "İngilis və rus dilləri",
+                        "en": "English and Russian languages",
+                        "ru": "Английский и русский языки"
+                  },
+                  "desc": {
+                        "az": "B1 səviyyəsi",
+                        "en": "B1 level",
+                        "ru": "Уровень B1"
+                  },
+                  "period": {
+                        "az": "Dillər",
+                        "en": "Languages",
+                        "ru": "Языки"
+                  }
+            },
+            {
+                  "tag": "HX",
+                  "title": {
+                        "az": "Hərbi xidmət",
+                        "en": "Military service",
+                        "ru": "Военная служба"
+                  },
+                  "desc": {
+                        "az": "Tamamlanıb",
+                        "en": "Completed",
+                        "ru": "Завершена"
+                  },
+                  "period": {
+                        "az": "2021 — 2023",
+                        "en": "2021 — 2023",
+                        "ru": "2021 — 2023"
+                  }
+            }
       ],
-      certs: [
-        ["HackerRank", "JavaScript (Intermediate)", "24 Feb 2026 · ID: 3CF1FC6C849C", "hackerrank training"],
-        ["HackerRank", "SQL (Basic)", "23 Feb 2026", "hackerrank training"],
-        ["HackerRank", "JavaScript (Basic)", "2026", "hackerrank training"],
-        ["HackerRank", "CSS (Basic)", "2026", "hackerrank training"],
-        ["HackerRank", "Problem Solving", "2026", "hackerrank training"],
-        ["HackerRank", "Python / Technical Skills", "2026", "hackerrank training"],
-        ["UEFA EURO 2016", "Azərbaycan–Xorvatiya matçında könüllü fəaliyyət", "2015", "volunteer sport"],
-        ["UEFA EURO 2016", "Azərbaycan–İtaliya matçında könüllü fəaliyyət", "2015", "volunteer sport"],
-        ["42-ci Bakı Dünya Şahmat Olimpiadası", "Dəyərli töhfəyə görə sertifikat", "2016", "volunteer award sport"],
-        ["4-cü İslam Həmrəyliyi Oyunları", "Focus on Solidarity müsabiqəsində 3-cü yer", "2017", "award sport"],
-        ["UEFA U-17 Avropa Çempionatı", "IT şöbəsində könüllü fəaliyyət", "2016", "volunteer sport"],
-        ["Sosial Media Layihəsi", "Sosial şəbəkələrdən düzgün istifadə layihəsində iştirak", "2016", "training"],
-        ["Red Bull Soapbox Race Bakı", "Tədbirin uğuruna töhfəyə görə", "2016", "volunteer award"],
-        ["Baku 2015 European Games", "Flamekeeper tamamlama sertifikatı", "2015", "volunteer sport"],
-        ["Baku 2015 European Games", "Flamekeeper vəzifəsinin icrası", "2015", "volunteer sport"],
-        ["Startup School — Qarabağ", "Təlim və mentorluq proqramı", "2020", "training"],
-        ["4-cü İslam Həmrəyliyi Oyunları", "Bədən dili könüllü inkişaf proqramı", "2017", "training volunteer"],
-        ["4-cü İslam Həmrəyliyi Oyunları", "Uğurlu Karyera könüllü inkişaf proqramı", "2017", "training volunteer"],
-        ["4-cü İslam Həmrəyliyi Oyunları", "Özünü Kəşf et könüllü inkişaf proqramı", "2017", "training volunteer"],
-        ["Baku 2015", "Gənclərin Turizm Forumunda iştirak", "2015", "training volunteer"],
-        ["AR Gənclər və İdman Nazirliyi", "Qış kuboku basketbol turnirində 3-cü yer", "2013", "sport award"],
-        ["Soyuq Əllər, İsti Ürək", "Mələklər xeyriyyə yarmarkasında komanda rəhbəri", "2016", "volunteer award"],
-        ["Formula 1 Grand Prix of Europe", "Aktiv fəaliyyətinə görə", "2016", "volunteer sport"],
-        ["Formula 1 Grand Prix of Europe", "Könüllü iştirak sertifikatı", "2016", "volunteer sport"],
-        ["Banc Tourism", "Turizm bələdçilərinin formalaşması layihəsi", "2017", "training"],
-        ["IT Kursu", "Veb sistemləri, MS Office Suite, Kompüter qrafikası", "2017", "training"],
-        ["Certificate of Thanks", "Beynəlxalq və yerli tədbirlərdə davamlı iştirak", "2015–2026", "award volunteer"]
+      "certs": [
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "JavaScript — orta səviyyə",
+                        "en": "JavaScript (Intermediate)",
+                        "ru": "JavaScript — средний уровень"
+                  },
+                  "24 Feb 2026 · ID: 3CF1FC6C849C",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "SQL — baza səviyyəsi",
+                        "en": "SQL (Basic)",
+                        "ru": "SQL — базовый уровень"
+                  },
+                  "23 Feb 2026",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "JavaScript — baza səviyyəsi",
+                        "en": "JavaScript (Basic)",
+                        "ru": "JavaScript — базовый уровень"
+                  },
+                  "2026",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "CSS — baza səviyyəsi",
+                        "en": "CSS (Basic)",
+                        "ru": "CSS — базовый уровень"
+                  },
+                  "2026",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "Problem həlli",
+                        "en": "Problem Solving",
+                        "ru": "Решение задач"
+                  },
+                  "2026",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "HackerRank",
+                        "en": "HackerRank",
+                        "ru": "HackerRank"
+                  },
+                  {
+                        "az": "Python / texniki bacarıqlar",
+                        "en": "Python / Technical Skills",
+                        "ru": "Python / технические навыки"
+                  },
+                  "2026",
+                  "hackerrank training"
+            ],
+            [
+                  {
+                        "az": "UEFA EURO 2016",
+                        "en": "UEFA EURO 2016",
+                        "ru": "UEFA EURO 2016"
+                  },
+                  {
+                        "az": "Azərbaycan–Xorvatiya matçında könüllü fəaliyyət",
+                        "en": "Volunteer work at the Azerbaijan–Croatia match",
+                        "ru": "Волонтерская деятельность на матче Азербайджан — Хорватия"
+                  },
+                  "2015",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "UEFA EURO 2016",
+                        "en": "UEFA EURO 2016",
+                        "ru": "UEFA EURO 2016"
+                  },
+                  {
+                        "az": "Azərbaycan–İtaliya matçında könüllü fəaliyyət",
+                        "en": "Volunteer work at the Azerbaijan–Italy match",
+                        "ru": "Волонтерская деятельность на матче Азербайджан — Италия"
+                  },
+                  "2015",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "42-ci Bakı Dünya Şahmat Olimpiadası",
+                        "en": "42nd Chess Olympiad Baku",
+                        "ru": "42-я Всемирная шахматная олимпиада в Баку"
+                  },
+                  {
+                        "az": "Dəyərli töhfəyə görə sertifikat",
+                        "en": "Certificate for valuable contribution",
+                        "ru": "Сертификат за ценный вклад"
+                  },
+                  "2016",
+                  "volunteer award sport"
+            ],
+            [
+                  {
+                        "az": "4-cü İslam Həmrəyliyi Oyunları",
+                        "en": "4th Islamic Solidarity Games",
+                        "ru": "4-е Игры исламской солидарности"
+                  },
+                  {
+                        "az": "“Focus on Solidarity” müsabiqəsində 3-cü yer",
+                        "en": "3rd place in the “Focus on Solidarity” competition",
+                        "ru": "3-е место в конкурсе «Focus on Solidarity»"
+                  },
+                  "2017",
+                  "award sport"
+            ],
+            [
+                  {
+                        "az": "UEFA U-17 Avropa Çempionatı",
+                        "en": "UEFA U-17 European Championship",
+                        "ru": "Чемпионат Европы UEFA U-17"
+                  },
+                  {
+                        "az": "IT şöbəsində könüllü fəaliyyət",
+                        "en": "Volunteer work in the IT department",
+                        "ru": "Волонтерская деятельность в IT-отделе"
+                  },
+                  "2016",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "Sosial media layihəsi",
+                        "en": "Social Media Project",
+                        "ru": "Проект по социальным сетям"
+                  },
+                  {
+                        "az": "Sosial şəbəkələrdən düzgün istifadə layihəsində iştirak",
+                        "en": "Participation in a project on proper social media use",
+                        "ru": "Участие в проекте о правильном использовании социальных сетей"
+                  },
+                  "2016",
+                  "training"
+            ],
+            [
+                  {
+                        "az": "Red Bull Soapbox Race Bakı",
+                        "en": "Red Bull Soapbox Race Baku",
+                        "ru": "Red Bull Soapbox Race Баку"
+                  },
+                  {
+                        "az": "Tədbirin uğuruna töhfəyə görə",
+                        "en": "For contribution to the success of the event",
+                        "ru": "За вклад в успех мероприятия"
+                  },
+                  "2016",
+                  "volunteer award"
+            ],
+            [
+                  {
+                        "az": "Baku 2015 Avropa Oyunları",
+                        "en": "Baku 2015 European Games",
+                        "ru": "Европейские игры Баку 2015"
+                  },
+                  {
+                        "az": "Flamekeeper proqramını tamamlama sertifikatı",
+                        "en": "Flamekeeper completion certificate",
+                        "ru": "Сертификат о завершении программы Flamekeeper"
+                  },
+                  "2015",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "Baku 2015 Avropa Oyunları",
+                        "en": "Baku 2015 European Games",
+                        "ru": "Европейские игры Баку 2015"
+                  },
+                  {
+                        "az": "Flamekeeper vəzifəsinin icrası",
+                        "en": "Performance of Flamekeeper duties",
+                        "ru": "Выполнение обязанностей Flamekeeper"
+                  },
+                  "2015",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "Startup School — Qarabağ",
+                        "en": "Startup School — Karabakh",
+                        "ru": "Startup School — Карабах"
+                  },
+                  {
+                        "az": "Təlim və mentorluq proqramı",
+                        "en": "Training and mentoring program",
+                        "ru": "Программа обучения и менторства"
+                  },
+                  "2020",
+                  "training"
+            ],
+            [
+                  {
+                        "az": "4-cü İslam Həmrəyliyi Oyunları",
+                        "en": "4th Islamic Solidarity Games",
+                        "ru": "4-е Игры исламской солидарности"
+                  },
+                  {
+                        "az": "Bədən dili üzrə könüllü inkişaf proqramı",
+                        "en": "Volunteer development program on body language",
+                        "ru": "Программа развития волонтеров по языку тела"
+                  },
+                  "2017",
+                  "training volunteer"
+            ],
+            [
+                  {
+                        "az": "4-cü İslam Həmrəyliyi Oyunları",
+                        "en": "4th Islamic Solidarity Games",
+                        "ru": "4-е Игры исламской солидарности"
+                  },
+                  {
+                        "az": "Uğurlu karyera üzrə könüllü inkişaf proqramı",
+                        "en": "Volunteer development program on building a successful career",
+                        "ru": "Программа развития волонтеров по успешной карьере"
+                  },
+                  "2017",
+                  "training volunteer"
+            ],
+            [
+                  {
+                        "az": "4-cü İslam Həmrəyliyi Oyunları",
+                        "en": "4th Islamic Solidarity Games",
+                        "ru": "4-е Игры исламской солидарности"
+                  },
+                  {
+                        "az": "Özünü kəşf et könüllü inkişaf proqramı",
+                        "en": "“Discover Yourself” volunteer development program",
+                        "ru": "Программа развития волонтеров «Познай себя»"
+                  },
+                  "2017",
+                  "training volunteer"
+            ],
+            [
+                  {
+                        "az": "Baku 2015",
+                        "en": "Baku 2015",
+                        "ru": "Баку 2015"
+                  },
+                  {
+                        "az": "Gənclərin Turizm Forumunda iştirak",
+                        "en": "Participation in the Youth Tourism Forum",
+                        "ru": "Участие в молодежном туристическом форуме"
+                  },
+                  "2015",
+                  "training volunteer"
+            ],
+            [
+                  {
+                        "az": "AR Gənclər və İdman Nazirliyi",
+                        "en": "Ministry of Youth and Sports of Azerbaijan",
+                        "ru": "Министерство молодежи и спорта Азербайджана"
+                  },
+                  {
+                        "az": "Qış kuboku basketbol turnirində 3-cü yer",
+                        "en": "3rd place in the Winter Cup basketball tournament",
+                        "ru": "3-е место в баскетбольном турнире «Зимний кубок»"
+                  },
+                  "2013",
+                  "sport award"
+            ],
+            [
+                  {
+                        "az": "Soyuq Əllər, İsti Ürək",
+                        "en": "Cold Hands, Warm Heart",
+                        "ru": "Холодные руки, теплое сердце"
+                  },
+                  {
+                        "az": "Mələklər xeyriyyə yarmarkasında komanda rəhbəri",
+                        "en": "Team leader at the Angels charity fair",
+                        "ru": "Руководитель команды на благотворительной ярмарке Angels"
+                  },
+                  "2016",
+                  "volunteer award"
+            ],
+            [
+                  {
+                        "az": "Formula 1 Grand Prix of Europe",
+                        "en": "Formula 1 Grand Prix of Europe",
+                        "ru": "Formula 1 Grand Prix of Europe"
+                  },
+                  {
+                        "az": "Aktiv fəaliyyətə görə",
+                        "en": "For active contribution",
+                        "ru": "За активную деятельность"
+                  },
+                  "2016",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "Formula 1 Grand Prix of Europe",
+                        "en": "Formula 1 Grand Prix of Europe",
+                        "ru": "Formula 1 Grand Prix of Europe"
+                  },
+                  {
+                        "az": "Könüllü iştirak sertifikatı",
+                        "en": "Volunteer participation certificate",
+                        "ru": "Сертификат волонтерского участия"
+                  },
+                  "2016",
+                  "volunteer sport"
+            ],
+            [
+                  {
+                        "az": "Banc Tourism",
+                        "en": "Banc Tourism",
+                        "ru": "Banc Tourism"
+                  },
+                  {
+                        "az": "Turizm bələdçilərinin formalaşdırılması layihəsi",
+                        "en": "Tour guide development project",
+                        "ru": "Проект подготовки туристических гидов"
+                  },
+                  "2017",
+                  "training"
+            ],
+            [
+                  {
+                        "az": "IT kursu",
+                        "en": "IT Course",
+                        "ru": "IT-курс"
+                  },
+                  {
+                        "az": "Veb sistemləri, MS Office paketi və kompüter qrafikası",
+                        "en": "Web systems, MS Office Suite and computer graphics",
+                        "ru": "Веб-системы, пакет MS Office и компьютерная графика"
+                  },
+                  "2017",
+                  "training"
+            ],
+            [
+                  {
+                        "az": "Təşəkkür sertifikatı",
+                        "en": "Certificate of Thanks",
+                        "ru": "Благодарственный сертификат"
+                  },
+                  {
+                        "az": "Beynəlxalq və yerli tədbirlərdə davamlı iştiraka görə",
+                        "en": "For continuous participation in international and local events",
+                        "ru": "За постоянное участие в международных и местных мероприятиях"
+                  },
+                  "2015–2026",
+                  "award volunteer"
+            ]
       ]
-    };
+};
 
     const i18n = {
-      az: {
-        brand_role:"Event Project Manager", nav_exp:"Təcrübə", nav_skills:"Bacarıqlar", nav_edu:"Təhsil", nav_certs:"Sertifikatlar", nav_contact:"Əlaqə",
-        hero_eyebrow:"Event Manager · Layihə Koordinatoru", hero_title:"Event Layihə Meneceri | Bakı, Azərbaycan", hero_desc:"Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarəedilməsini həyata keçirən təcrübəli mütəxəssis. 8+ illik müxtəlif sektorda iş təcrübəsi.", hero_cta1:"Əlaqə yarat", hero_cta2:"Təcrübəyə bax", print_btn:"CV kimi çap et", photo_badge:"Event Manager", available:"Layihələrə açıq", stat1:"İl təcrübə", stat2:"Layihə", stat3:"Sertifikat",
-        sec_exp_label:"İş Təcrübəsi", sec_exp_title:"Karyera", sec_exp_title2:"Yolu", sec_exp_copy:"Event, ticketing, maliyyə və qonaq təcrübəsi sahələrində real əməliyyat idarəçiliyi.",
-        sec_skills_label:"Bacarıqlar", sec_skills_title:"Peşəkar", sec_skills_title2:"Bacarıqlar", sec_skills_copy:"Layihəni planlamaq, komandaları yönləndirmək, əməliyyatları ölçmək və nəticəni premium səviyyədə çatdırmaq.", soft_label:"Güclü tərəflər",
-        sec_edu_label:"Təhsil", sec_edu_title:"Akademik", sec_edu_title2:"Keçmiş", sec_edu_copy:"İnformasiya texnologiyaları, dil bilikləri və tamamlanmış hərbi xidmət.",
-        sec_cert_label:"Sertifikatlar", sec_cert_title:"Sertifikat", sec_cert_title2:"& Mükafatlar", sec_cert_copy:"Texniki bacarıqlar, könüllülük, idman və beynəlxalq tədbirlər üzrə təsdiqlənmiş nailiyyətlər.", search_placeholder:"Sertifikat axtar...",
-        filter_all:"Hamısı", filter_hackerrank:"HackerRank", filter_sport:"İdman", filter_volunteer:"Könüllülük", filter_training:"Təlim", filter_award:"Mükafat",
-        sec_contact_label:"Əlaqə", c_phone:"Telefon", c_loc:"Məkan", cta_title:"Birlikdə işləyək", cta_desc:"Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, event koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.", cta_btn:"Məktub göndər"
+      "az": {
+            "brand_role": "Tədbir layihə meneceri",
+            "nav_exp": "Təcrübə",
+            "nav_skills": "Bacarıqlar",
+            "nav_edu": "Təhsil",
+            "nav_certs": "Sertifikatlar",
+            "nav_contact": "Əlaqə",
+            "hero_eyebrow": "Tədbir meneceri · Layihə koordinatoru",
+            "hero_title": "Tədbir layihə meneceri | Bakı, Azərbaycan",
+            "hero_desc": "Böyük miqyaslı tədbirlərin planlaşdırılması, koordinasiyası və idarə edilməsini həyata keçirən təcrübəli mütəxəssis. Müxtəlif sektorlar üzrə 8+ illik iş təcrübəsi.",
+            "hero_cta1": "Əlaqə yarat",
+            "hero_cta2": "Təcrübəyə bax",
+            "print_btn": "CV kimi çap et",
+            "photo_badge": "Tədbir meneceri",
+            "available": "Layihələrə açıq",
+            "stat1": "İl təcrübə",
+            "stat2": "Layihə",
+            "stat3": "Sertifikat",
+            "sec_exp_label": "İş təcrübəsi",
+            "sec_exp_title": "Karyera",
+            "sec_exp_title2": "yolu",
+            "sec_exp_copy": "Tədbirlər, bilet əməliyyatları, maliyyə və qonaq təcrübəsi sahələrində praktiki əməliyyat idarəçiliyi.",
+            "sec_skills_label": "Bacarıqlar",
+            "sec_skills_title": "Peşəkar",
+            "sec_skills_title2": "bacarıqlar",
+            "sec_skills_copy": "Layihələrin planlaşdırılması, komandaların yönləndirilməsi, əməliyyatların ölçülməsi və nəticələrin yüksək səviyyədə təqdim edilməsi.",
+            "soft_label": "Güclü tərəflər",
+            "sec_edu_label": "Təhsil",
+            "sec_edu_title": "Akademik",
+            "sec_edu_title2": "keçmiş",
+            "sec_edu_copy": "Təhsil, dil bilikləri və hərbi xidmət haqqında əsas məlumatlar.",
+            "sec_cert_label": "Sertifikatlar",
+            "sec_cert_title": "Sertifikatlar",
+            "sec_cert_title2": "və mükafatlar",
+            "sec_cert_copy": "Texniki bacarıqlar, könüllülük, idman və beynəlxalq tədbirlər üzrə təsdiqlənmiş nailiyyətlər.",
+            "search_placeholder": "Sertifikat axtar...",
+            "filter_all": "Hamısı",
+            "filter_hackerrank": "HackerRank",
+            "filter_sport": "İdman",
+            "filter_volunteer": "Könüllülük",
+            "filter_training": "Təlim",
+            "filter_award": "Mükafat",
+            "cat_hackerrank": "HackerRank",
+            "cat_sport": "İdman",
+            "cat_volunteer": "Könüllülük",
+            "cat_training": "Təlim",
+            "cat_award": "Mükafat",
+            "sec_contact_label": "Əlaqə",
+            "c_phone": "Telefon",
+            "c_loc": "Məkan",
+            "loc_value": "Bakı, Azərbaycan",
+            "whatsapp_direct": "Birbaşa WhatsApp-dan yaz",
+            "email_label": "E-poçt",
+            "footer_rights": "Bütün hüquqlar qorunur.",
+            "footer_top": "Yuxarı",
+            "cta_title": "Birlikdə işləyək",
+            "cta_desc": "Yeni layihə üçün hazıram. Böyük miqyaslı tədbirlər, tədbir koordinasiyası və layihə idarəetməsi sahəsində əməkdaşlığa açığam.",
+            "cta_btn": "Məktub göndər",
+            "wa_msg": "Salam Rasim bəy, CV-nizi gördüm və sizinlə əlaqə saxlamaq istəyirəm."
       },
-      en: {
-        brand_role:"Event Project Manager", nav_exp:"Experience", nav_skills:"Skills", nav_edu:"Education", nav_certs:"Certificates", nav_contact:"Contact",
-        hero_eyebrow:"Event Manager · Project Coordinator", hero_title:"Event Project Manager | Baku, Azerbaijan", hero_desc:"Experienced professional managing large-scale events from concept to completion, with 8+ years of cross-sector experience.", hero_cta1:"Get in touch", hero_cta2:"View experience", print_btn:"Print CV", photo_badge:"Event Manager", available:"Open to projects", stat1:"Years experience", stat2:"Projects", stat3:"Certificates",
-        sec_exp_label:"Work Experience", sec_exp_title:"Career", sec_exp_title2:"Journey", sec_exp_copy:"Hands-on operations leadership across events, ticketing, finance and guest experience.",
-        sec_skills_label:"Skills", sec_skills_title:"Professional", sec_skills_title2:"Skills", sec_skills_copy:"Planning projects, leading teams, measuring operations and delivering premium outcomes.", soft_label:"Core strengths",
-        sec_edu_label:"Education", sec_edu_title:"Academic", sec_edu_title2:"Background", sec_edu_copy:"Information technology background, language skills and completed military service.",
-        sec_cert_label:"Certificates", sec_cert_title:"Certificates", sec_cert_title2:"& Awards", sec_cert_copy:"Verified achievements across technical skills, volunteering, sports and international events.", search_placeholder:"Search certificates...",
-        filter_all:"All", filter_hackerrank:"HackerRank", filter_sport:"Sports", filter_volunteer:"Volunteering", filter_training:"Training", filter_award:"Awards",
-        sec_contact_label:"Contact", c_phone:"Phone", c_loc:"Location", cta_title:"Let's work together", cta_desc:"Available for new projects and collaborations in large-scale events, event coordination and project management.", cta_btn:"Send a message"
+      "en": {
+            "brand_role": "Event Project Manager",
+            "nav_exp": "Experience",
+            "nav_skills": "Skills",
+            "nav_edu": "Education",
+            "nav_certs": "Certificates",
+            "nav_contact": "Contact",
+            "hero_eyebrow": "Event Manager · Project Coordinator",
+            "hero_title": "Event Project Manager | Baku, Azerbaijan",
+            "hero_desc": "Experienced professional managing large-scale events from concept to completion, with 8+ years of cross-sector experience.",
+            "hero_cta1": "Get in touch",
+            "hero_cta2": "View experience",
+            "print_btn": "Print CV",
+            "photo_badge": "Event Manager",
+            "available": "Open to projects",
+            "stat1": "Years experience",
+            "stat2": "Projects",
+            "stat3": "Certificates",
+            "sec_exp_label": "Work Experience",
+            "sec_exp_title": "Career",
+            "sec_exp_title2": "Journey",
+            "sec_exp_copy": "Hands-on operations leadership across events, ticketing, finance and guest experience.",
+            "sec_skills_label": "Skills",
+            "sec_skills_title": "Professional",
+            "sec_skills_title2": "Skills",
+            "sec_skills_copy": "Planning projects, leading teams, measuring operations and delivering premium outcomes.",
+            "soft_label": "Core strengths",
+            "sec_edu_label": "Education",
+            "sec_edu_title": "Academic",
+            "sec_edu_title2": "background",
+            "sec_edu_copy": "Key information about education, language skills and completed military service.",
+            "sec_cert_label": "Certificates",
+            "sec_cert_title": "Certificates",
+            "sec_cert_title2": "& Awards",
+            "sec_cert_copy": "Verified achievements across technical skills, volunteering, sports and international events.",
+            "search_placeholder": "Search certificates...",
+            "filter_all": "All",
+            "filter_hackerrank": "HackerRank",
+            "filter_sport": "Sports",
+            "filter_volunteer": "Volunteering",
+            "filter_training": "Training",
+            "filter_award": "Awards",
+            "cat_hackerrank": "HackerRank",
+            "cat_sport": "Sports",
+            "cat_volunteer": "Volunteering",
+            "cat_training": "Training",
+            "cat_award": "Award",
+            "sec_contact_label": "Contact",
+            "c_phone": "Phone",
+            "c_loc": "Location",
+            "loc_value": "Baku, Azerbaijan",
+            "whatsapp_direct": "Message directly on WhatsApp",
+            "email_label": "Email",
+            "footer_rights": "All rights reserved.",
+            "footer_top": "Top",
+            "cta_title": "Let's work together",
+            "cta_desc": "Available for new projects and collaborations in large-scale events, event coordination and project management.",
+            "cta_btn": "Send a message",
+            "wa_msg": "Hello Mr. Rasim, I saw your CV and would like to contact you."
       },
-      ru: {
-        brand_role:"Менеджер event-проектов", nav_exp:"Опыт", nav_skills:"Навыки", nav_edu:"Образование", nav_certs:"Сертификаты", nav_contact:"Контакты",
-        hero_eyebrow:"Event Manager · Координатор проектов", hero_title:"Менеджер event-проектов | Баку, Азербайджан", hero_desc:"Опытный специалист по планированию, координации и управлению крупными мероприятиями. Более 8 лет опыта в разных сферах.", hero_cta1:"Связаться", hero_cta2:"Смотреть опыт", print_btn:"Печать CV", photo_badge:"Event Manager", available:"Открыт к проектам", stat1:"Лет опыта", stat2:"Проектов", stat3:"Сертификатов",
-        sec_exp_label:"Опыт работы", sec_exp_title:"Карьерный", sec_exp_title2:"путь", sec_exp_copy:"Операционное управление в event, ticketing, финансах и гостевом сервисе.",
-        sec_skills_label:"Навыки", sec_skills_title:"Профессиональные", sec_skills_title2:"навыки", sec_skills_copy:"Планирование проектов, управление командами, контроль операций и премиальный результат.", soft_label:"Сильные стороны",
-        sec_edu_label:"Образование", sec_edu_title:"Академический", sec_edu_title2:"профиль", sec_edu_copy:"Информационные технологии, языки и завершенная военная служба.",
-        sec_cert_label:"Сертификаты", sec_cert_title:"Сертификаты", sec_cert_title2:"и награды", sec_cert_copy:"Подтвержденные достижения в технических навыках, волонтерстве, спорте и международных мероприятиях.", search_placeholder:"Поиск сертификатов...",
-        filter_all:"Все", filter_hackerrank:"HackerRank", filter_sport:"Спорт", filter_volunteer:"Волонтерство", filter_training:"Обучение", filter_award:"Награды",
-        sec_contact_label:"Контакты", c_phone:"Телефон", c_loc:"Локация", cta_title:"Давайте работать вместе", cta_desc:"Открыт к новым проектам и сотрудничеству в крупных мероприятиях, event-координации и проектном управлении.", cta_btn:"Написать"
+      "ru": {
+            "brand_role": "Менеджер event-проектов",
+            "nav_exp": "Опыт",
+            "nav_skills": "Навыки",
+            "nav_edu": "Образование",
+            "nav_certs": "Сертификаты",
+            "nav_contact": "Контакты",
+            "hero_eyebrow": "Event Manager · Координатор проектов",
+            "hero_title": "Менеджер event-проектов | Баку, Азербайджан",
+            "hero_desc": "Опытный специалист по планированию, координации и управлению крупными мероприятиями. Более 8 лет опыта в разных сферах.",
+            "hero_cta1": "Связаться",
+            "hero_cta2": "Смотреть опыт",
+            "print_btn": "Печать CV",
+            "photo_badge": "Event-менеджер",
+            "available": "Открыт к проектам",
+            "stat1": "Лет опыта",
+            "stat2": "Проектов",
+            "stat3": "Сертификатов",
+            "sec_exp_label": "Опыт работы",
+            "sec_exp_title": "Карьерный",
+            "sec_exp_title2": "путь",
+            "sec_exp_copy": "Операционное управление в event-сфере, билетных операциях, финансах и гостевом сервисе.",
+            "sec_skills_label": "Навыки",
+            "sec_skills_title": "Профессиональные",
+            "sec_skills_title2": "навыки",
+            "sec_skills_copy": "Планирование проектов, управление командами, контроль операций и достижение результата высокого уровня.",
+            "soft_label": "Сильные стороны",
+            "sec_edu_label": "Образование",
+            "sec_edu_title": "Академическая",
+            "sec_edu_title2": "подготовка",
+            "sec_edu_copy": "Ключевая информация об образовании, языковых навыках и завершенной военной службе.",
+            "sec_cert_label": "Сертификаты",
+            "sec_cert_title": "Сертификаты",
+            "sec_cert_title2": "и награды",
+            "sec_cert_copy": "Подтвержденные достижения в технических навыках, волонтерстве, спорте и международных мероприятиях.",
+            "search_placeholder": "Поиск сертификатов...",
+            "filter_all": "Все",
+            "filter_hackerrank": "HackerRank",
+            "filter_sport": "Спорт",
+            "filter_volunteer": "Волонтерство",
+            "filter_training": "Обучение",
+            "filter_award": "Награды",
+            "cat_hackerrank": "HackerRank",
+            "cat_sport": "Спорт",
+            "cat_volunteer": "Волонтерство",
+            "cat_training": "Обучение",
+            "cat_award": "Награда",
+            "sec_contact_label": "Контакты",
+            "c_phone": "Телефон",
+            "c_loc": "Локация",
+            "loc_value": "Баку, Азербайджан",
+            "whatsapp_direct": "Написать напрямую в WhatsApp",
+            "email_label": "Эл. почта",
+            "footer_rights": "Все права защищены.",
+            "footer_top": "Наверх",
+            "cta_title": "Давайте работать вместе",
+            "cta_desc": "Открыт к новым проектам и сотрудничеству в крупных мероприятиях, event-координации и проектном управлении.",
+            "cta_btn": "Написать",
+            "wa_msg": "Здравствуйте, господин Расим. Я увидел(а) ваше CV и хотел(а) бы связаться с вами."
       }
-    };
+};
 
     const state = { lang: localStorage.getItem("portfolio-lang") || "az", filter: "all", query: "" };
     const $ = (s, root = document) => root.querySelector(s);
     const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
     function t(key) { return i18n[state.lang][key] || i18n.az[key] || key; }
-    function byLang(value) { return typeof value === "object" ? (value[state.lang] || value.az || Object.values(value)[0]) : value; }
+    function byLang(value) {
+      const raw = typeof value === "object" ? (value[state.lang] || value.az || Object.values(value)[0]) : value;
+      if (typeof raw !== "string") return raw;
+      if (state.lang === "az") return raw.replace(/\bPresent\b/gi, "Hazırda").replace(/\bpresent\b/gi, "hazırda");
+      if (state.lang === "ru") return raw.replace(/\bPresent\b/gi, "по настоящее время").replace(/\bpresent\b/gi, "по настоящее время");
+      return raw;
+    }
 
     function renderExperience() {
       $("#experienceList").innerHTML = profile.experiences.map(item => `
         <article class="experience-card reveal">
-          <div class="period">${item.period}</div>
-          <div><h3 class="role">${byLang(item.role)}</h3><div class="company">${item.company}</div><p class="desc">${byLang(item.desc)}</p></div>
+          <div class="period">${byLang(item.period)}</div>
+          <div><h3 class="role">${byLang(item.role)}</h3><div class="company">${byLang(item.company)}</div><p class="desc">${byLang(item.desc)}</p></div>
         </article>`).join("");
     }
 
@@ -1052,7 +1925,7 @@
 
     function renderEducation() {
       $("#educationGrid").innerHTML = profile.education.map(item => `
-        <article class="edu-card reveal"><div class="edu-tag">${item.tag}</div><div><h3>${byLang(item.title)}</h3><p>${byLang(item.desc)}</p></div><small>${item.period}</small></article>`).join("");
+        <article class="edu-card reveal"><div class="edu-tag">${item.tag}</div><div><h3>${byLang(item.title)}</h3><p>${byLang(item.desc)}</p></div><small>${byLang(item.period)}</small></article>`).join("");
     }
 
     function renderFilters() {
@@ -1062,11 +1935,16 @@
 
     function renderCerts() {
       const q = state.query.trim().toLowerCase();
+      const categoryLabel = (cats) => {
+        const first = cats.split(" ")[0];
+        return t("cat_" + first) || first;
+      };
       $("#certGrid").innerHTML = profile.certs.map(([org, title, date, cats]) => {
-        const text = `${org} ${title} ${date} ${cats}`.toLowerCase();
+        const orgText = byLang(org);
+        const titleText = byLang(title);
+        const text = `${orgText} ${titleText} ${date} ${cats}`.toLowerCase();
         const visible = (state.filter === "all" || cats.includes(state.filter)) && (!q || text.includes(q));
-        const type = cats.split(" ")[0];
-        return `<article class="cert-card reveal ${visible ? "" : "hidden"}" data-cat="${cats}"><span class="cert-type">${type}</span><h3>${org}</h3><p>${title}</p><footer><span>${date}</span><span>✦</span></footer></article>`;
+        return `<article class="cert-card reveal ${visible ? "" : "hidden"}" data-cat="${cats}"><span class="cert-type">${categoryLabel(cats)}</span><h3>${orgText}</h3><p>${titleText}</p><footer><span>${date}</span><span>✦</span></footer></article>`;
       }).join("");
     }
 
@@ -1074,6 +1952,7 @@
       document.documentElement.lang = state.lang;
       $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
       $$('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+      $$('a[href^="https://wa.me/994556760115"]').forEach(a => { a.href = 'https://wa.me/994556760115?text=' + encodeURIComponent(t('wa_msg')); });
       $$('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === state.lang));
       renderExperience(); renderSkills(); renderEducation(); renderFilters(); renderCerts(); observeReveal(); animateBars();
       localStorage.setItem("portfolio-lang", state.lang);
